@@ -1,13 +1,12 @@
 <template>
-$END$
+  <div>
+    <Header/>
+    <Nuxt />
+    <div id="back-to-top" data-toggle="tooltip" data-placement="top" title="Return to top">
+      <i class="la la-arrow-up"></i>
+    </div>
+    <Footer/>
+  </div>
 </template>
 
-<script>
-export default {
-name: "default"
-}
-</script>
 
-<style scoped>
-
-</style>
