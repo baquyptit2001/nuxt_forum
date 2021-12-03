@@ -4,12 +4,15 @@
       <div class="row align-items-center">
         <div class="col-lg-2">
           <div class="logo-box">
-            <NuxtLink :to="{ name: 'index' }"><a href="#" class="logo"><img src="~assets/images/logo-black.png" alt="logo"></a></NuxtLink>
+            <NuxtLink :to="{ name: 'index' }"><a href="#" class="logo"><img src="~assets/images/logo-black.png"
+                                                                            alt="logo"></a></NuxtLink>
             <div class="user-action">
-              <div class="search-menu-toggle icon-element icon-element-xs shadow-sm mr-1" data-toggle="tooltip" data-placement="top" title="Search">
+              <div class="search-menu-toggle icon-element icon-element-xs shadow-sm mr-1" data-toggle="tooltip"
+                   data-placement="top" title="Search">
                 <i class="la la-search"></i>
               </div>
-              <div class="off-canvas-menu-toggle icon-element icon-element-xs shadow-sm" data-toggle="tooltip" data-placement="top" title="Main menu">
+              <div class="off-canvas-menu-toggle icon-element icon-element-xs shadow-sm" data-toggle="tooltip"
+                   data-placement="top" title="Main menu">
                 <i class="la la-bars"></i>
               </div>
             </div>
@@ -24,7 +27,8 @@
                   <ul class="dropdown-menu-item">
                     <li><a href="index.html">Home - landing</a></li>
                     <li><a href="home-2.html">Home - main</a></li>
-                    <li><a href="home-3.html">Home - layout 2 <span class="badge bg-warning text-white">New</span></a></li>
+                    <li><a href="home-3.html">Home - layout 2 <span class="badge bg-warning text-white">New</span></a>
+                    </li>
                   </ul>
                 </li>
                 <li class="is-mega-menu">
@@ -67,11 +71,14 @@
                         <a href="signup-2.html">sign up 2</a>
                         <a href="recover-password.html">recover password</a>
                         <a href="questions-layout-2.html">questions layout 2 <span class="badge bg-warning text-white">New</span></a>
-                        <a href="questions-full-width.html">questions full-width <span class="badge bg-warning text-white">New</span></a>
-                        <a href="questions-left-sidebar.html">questions left sidebar <span class="badge bg-warning text-white">New</span></a>
+                        <a href="questions-full-width.html">questions full-width <span
+                          class="badge bg-warning text-white">New</span></a>
+                        <a href="questions-left-sidebar.html">questions left sidebar <span
+                          class="badge bg-warning text-white">New</span></a>
                       </li>
                       <li class="col-lg-3">
-                        <a href="questions-right-sidebar.html">questions right sidebar <span class="badge bg-warning text-white">New</span></a>
+                        <a href="questions-right-sidebar.html">questions right sidebar <span
+                          class="badge bg-warning text-white">New</span></a>
                         <a href="user-list.html">user list <span class="badge bg-warning text-white">New</span></a>
                         <a href="category-list.html">category list <span class="badge bg-warning text-white">New</span></a>
                         <a href="tags-list.html">tags list <span class="badge bg-warning text-white">New</span></a>
@@ -96,19 +103,22 @@
             </nav><!-- end main-menu -->
             <form method="post" class="mr-4">
               <div class="form-group mb-0">
-                <input class="form-control form--control form--control-bg-gray" type="text" name="search" placeholder="Type your search words...">
+                <input class="form-control form--control form--control-bg-gray" type="text" name="search"
+                       placeholder="Type your search words...">
                 <button class="form-btn" type="button"><i class="la la-search"></i></button>
               </div>
             </form>
             <div class="nav-right-button">
-              <NuxtLink :to="{ name: 'accounts-login' }"><a href="#" class="btn theme-btn"><i class="la la-user mr-1"></i> Account</a></NuxtLink>
+              <NuxtLink :to="{ name: 'accounts-login' }"><a href="#" class="btn theme-btn"><i
+                class="la la-user mr-1"></i> Account</a></NuxtLink>
             </div><!-- end nav-right-button -->
           </div><!-- end menu-wrapper -->
         </div><!-- end col-lg-10 -->
       </div><!-- end row -->
     </div><!-- end container -->
     <div class="off-canvas-menu custom-scrollbar-styled">
-      <div class="off-canvas-menu-close icon-element icon-element-sm shadow-sm" data-toggle="tooltip" data-placement="left" title="Close menu">
+      <div class="off-canvas-menu-close icon-element icon-element-sm shadow-sm" data-toggle="tooltip"
+           data-placement="left" title="Close menu">
         <i class="la la-times"></i>
       </div><!-- end off-canvas-menu-close -->
       <ul class="generic-list-item off-canvas-menu-list pt-90px">
@@ -154,16 +164,19 @@
         </li>
       </ul>
       <div class="off-canvas-btn-box px-4 pt-5 text-center">
-        <a href="#" class="btn theme-btn theme-btn-sm theme-btn-outline" data-toggle="modal" data-target="#loginModal"><i class="la la-sign-in mr-1"></i> Login</a>
+        <a href="#" class="btn theme-btn theme-btn-sm theme-btn-outline" data-toggle="modal"
+           data-target="#loginModal"><i class="la la-sign-in mr-1"></i> Login</a>
         <span class="fs-15 fw-medium d-inline-block mx-2">Or</span>
-        <a href="#" class="btn theme-btn theme-btn-sm" data-toggle="modal" data-target="#signUpModal"><i class="la la-plus mr-1"></i> Sign up</a>
+        <a href="#" class="btn theme-btn theme-btn-sm" data-toggle="modal" data-target="#signUpModal"><i
+          class="la la-plus mr-1"></i> Sign up</a>
       </div>
     </div><!-- end off-canvas-menu -->
     <div class="mobile-search-form">
       <div class="d-flex align-items-center">
         <form method="post" class="flex-grow-1 mr-3">
           <div class="form-group mb-0">
-            <input class="form-control form--control pl-40px" type="text" name="search" placeholder="Type your search words...">
+            <input class="form-control form--control pl-40px" type="text" name="search"
+                   placeholder="Type your search words...">
             <span class="la la-search input-icon"></span>
           </div>
         </form>
@@ -177,8 +190,39 @@
 </template>
 
 <script>
+import axios from "axios";
+import {api_domain} from "../constants/constants";
+
 export default {
-  name: "Header"
+  name: "Header",
+  data() {
+    return {
+      return: {
+        user: null,
+      }
+    }
+  },
+  created() {
+    this.getUser();
+    this.access_token = this.$store.getters['accounts/getToken'];
+    this.user = this.$store.getters['accounts/getUser'];
+  }, methods: {
+    getUser() {
+      if (this.access_token) {
+        axios.get(api_domain + 'accounts/info', {
+          headers: {
+            'Authorization': `Bearer ${this.access_token}`
+          },
+        })
+          .then(response => {
+            // this.$store.commit('accounts/setUser', response.data.data);
+          })
+          .catch(error => {
+            // console.log(error);
+          })
+      }
+    }
+  }
 }
 </script>
 

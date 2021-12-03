@@ -55,11 +55,25 @@ export default {
     [
       'nuxt-element-ui',
       'cookie-universal-nuxt',
+      '@nuxtjs/axios',
     ],
   ],
 
   // Build Configuration: https://go.nuxtjs.dev/config-build
   build: {
     // publicPath: 'https://unpkg.com/element-ui/lib/theme-chalk/index.css',
+    extend(config, { isClient }) {
+      // Extend only webpack config for client-bundle
+      if (isClient) {
+        config.devtool = 'source-map'
+      }
+    }
+  },
+
+  vue: {
+    config: {
+      productionTip: true,
+      devtools: true
+    }
   }
 }

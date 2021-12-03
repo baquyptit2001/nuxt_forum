@@ -73,6 +73,7 @@
 <script>
 import axios from "axios";
 import {api_domain, max_age_days} from "../../constants/constants";
+import setCookie from "../../helper/setCookie";
 
 export default {
   data () {
@@ -106,7 +107,8 @@ export default {
             title: 'Đăng nhập thành công',
             message: response.data.message
           });
-          localStorage.setItem('access_token', response.data.access_token);
+          setCookie.setCookieObject(response.data.user, 'user');
+          setCookie.setCookie('access_token', response.data.access_token);
           this.$router.push({name: 'index'});
         }
       })
