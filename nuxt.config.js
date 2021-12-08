@@ -18,7 +18,9 @@ export default {
       { src: '/js/jquery-3.4.1.min.js' },
       { src: '/js/bootstrap.bundle.min.js' },
       { src: '/js/owl.carousel.min.js' },
+      { src: '/js/jquery-te-1.4.0.min.js' },
       { src: '/js/selectize.min.js' },
+      { src: '/js/jquery.multi-file.min.js' },
       { src: '/js/main.js' },
       { src: '/js/element.js' },
 
@@ -35,6 +37,7 @@ export default {
     '~assets/css/style.css',
     '~assets/css/transition.css',
     '~assets/css/element.css',
+    '~assets/css/jquery-te-1.4.0.css',
   ],
 
   // Plugins to run before rendering page: https://go.nuxtjs.dev/config-plugins
@@ -54,7 +57,6 @@ export default {
   modules: [
     [
       'nuxt-element-ui',
-      'cookie-universal-nuxt',
       '@nuxtjs/axios',
     ],
   ],

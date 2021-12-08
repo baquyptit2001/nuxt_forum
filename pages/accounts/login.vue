@@ -74,8 +74,19 @@
 import axios from "axios";
 import {api_domain, max_age_days} from "../../constants/constants";
 import setCookie from "../../helper/setCookie";
+import checkCookie from "../../helper/checkCookie";
 
 export default {
+  fetch() {
+    if (checkCookie('access_token')) {
+      this.$router.push({name: 'index'});
+      this.$notify({
+        title: 'Already logged in',
+        text: 'You are already logged in',
+        type: 'error'
+      });
+    }
+  },
   data () {
     return {
       user: {

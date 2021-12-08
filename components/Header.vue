@@ -109,8 +109,19 @@
               </div>
             </form>
             <div class="nav-right-button">
-              <NuxtLink :to="{ name: 'accounts-login' }"><a href="#" class="btn theme-btn"><i
+              <NuxtLink v-if="!access_token" :to="{ name: 'accounts-login' }"><a href="#" class="btn theme-btn"><i
                 class="la la-user mr-1"></i> Account</a></NuxtLink>
+              <div class="dropdown" v-else>
+                <button class="btn btn-primary dropdown-toggle" type="button" id="dropdownMenuButton"
+                        data-toggle="dropdown" aria-expanded="false">
+                  {{ user.username }}
+                </button>
+                <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+                  <a class="dropdown-item" href="#">Profile</a>
+                  <div class="dropdown-divider"></div>
+                  <a class="dropdown-item" href="#" @click="logout">Log Out</a>
+                </div>
+              </div>
             </div><!-- end nav-right-button -->
           </div><!-- end menu-wrapper -->
         </div><!-- end col-lg-10 -->
@@ -192,36 +203,51 @@
 <script>
 import axios from "axios";
 import {api_domain} from "../constants/constants";
+import Cookies from "js-cookie";
 
 export default {
   name: "Header",
   data() {
     return {
-      return: {
-        user: null,
-      }
+      user: {
+        username: null,
+        email: null,
+        id: null,
+      },
+      access_token: null,
     }
   },
   created() {
-    this.getUser();
-    this.access_token = this.$store.getters['accounts/getToken'];
-    this.user = this.$store.getters['accounts/getUser'];
-  }, methods: {
-    getUser() {
-      if (this.access_token) {
-        axios.get(api_domain + 'accounts/info', {
-          headers: {
-            'Authorization': `Bearer ${this.access_token}`
-          },
-        })
-          .then(response => {
-            // this.$store.commit('accounts/setUser', response.data.data);
-          })
-          .catch(error => {
-            // console.log(error);
-          })
-      }
-    }
+    this.access_token = Cookies.get('access_token');
+    this.user.id = Cookies.get('user.id');
+    this.user.username = Cookies.get('user.username');
+    this.user.email = Cookies.get('user.email');
+  },
+  methods: {
+    logout() {
+      axios.get(api_domain + 'accounts/log-out', {
+        headers: {
+          'Authorization': 'Bearer ' + this.access_token,
+        }
+      }).then(response => {
+        if (response.data.status_code === 200) {
+          this.$notify.success({
+            title: response.data.message,
+            message: "Bạn sẽ sớm được điều hướng",
+          });
+          Cookies.remove('access_token');
+          Cookies.remove('user.id');
+          Cookies.remove('user.username');
+          Cookies.remove('user.email');
+          this.$router.push({name: 'accounts-login'});
+        }
+      }).catch(error => {
+        this.$notify.error({
+          title: "Đăng xuất không thành công",
+          message: "Vui lòng thử lại sau.",
+        });
+      });
+    },
   }
 }
 </script>
