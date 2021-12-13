@@ -20,9 +20,10 @@ export default {
       { src: '/js/owl.carousel.min.js' },
       { src: '/js/jquery-te-1.4.0.min.js' },
       { src: '/js/selectize.min.js' },
+      { src: '/js/upvote.vanilla.js' },
+      { src: '/js/upvote-script.js' },
       { src: '/js/jquery.multi-file.min.js' },
       { src: '/js/main.js' },
-      { src: '/js/element.js' },
 
     ]
   },
@@ -38,6 +39,7 @@ export default {
     '~assets/css/transition.css',
     '~assets/css/element.css',
     '~assets/css/jquery-te-1.4.0.css',
+    '~assets/css/upvotejs.min.css',
   ],
 
   // Plugins to run before rendering page: https://go.nuxtjs.dev/config-plugins

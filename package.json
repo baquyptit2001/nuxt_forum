@@ -16,7 +16,8 @@
     "js-cookie": "^3.0.1",
     "nuxt": "^2.15.7",
     "nuxt-element-ui": "^1.0.10",
-    "nuxt-i18n": "^6.28.1"
+    "nuxt-i18n": "^6.28.1",
+    "pluralize": "^8.0.0"
   },
   "devDependencies": {
     "@nuxt/types": "^2.15.7",

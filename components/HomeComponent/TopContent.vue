@@ -14,7 +14,7 @@
         </p>
         <div class="hero-btn-box py-4">
           <a href="signup.html" class="btn theme-btn mr-2">Join the community</a>
-          <a href="ask-question.html" class="btn theme-btn theme-btn-outline">Ask a Question</a>
+          <NuxtLink :to="{name: 'questions-add'}" ><a href="#" class="btn theme-btn theme-btn-outline">Ask a Question</a></NuxtLink>
         </div>
       </div><!-- end hero-content -->
       <div class="row">

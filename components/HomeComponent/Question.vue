@@ -46,7 +46,7 @@
                   </div>
                 </div>
                 <div class="media-body">
-                  <h5 class="mb-2 fw-medium"><a href="question-details.html">{{ question.title }}</a></h5>
+                  <h5 class="mb-2 fw-medium"><NuxtLink :to="{name: 'questions-slug', params: {slug: question.slug}}"><a href="#">{{ question.title }}</a></NuxtLink></h5>
                   <p class="mb-2 truncate lh-20 fs-15" v-html="question.question"></p>
                   <div class="tags">
                     <a href="#" class="tag-link">javascript</a>
@@ -60,7 +60,7 @@
                     </a>
                     <div class="media-body d-flex flex-wrap align-items-center justify-content-between">
                       <div>
-                        <h5 class="pb-1"><a href="user-profile.html">{{ question.user.username }}</a></h5>
+                        <h5 class="pb-1"><a href="user-profile.html">{{ question.user }}</a></h5>
                         <div class="stats fs-12 d-flex align-items-center lh-18">
                           <span class="text-black pr-2" title="Reputation score">224</span>
                           <span class="pr-2 d-inline-flex align-items-center" title="Gold badge"><span
