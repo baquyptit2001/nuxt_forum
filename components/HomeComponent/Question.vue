@@ -60,7 +60,7 @@
                     </a>
                     <div class="media-body d-flex flex-wrap align-items-center justify-content-between">
                       <div>
-                        <h5 class="pb-1"><a href="user-profile.html">{{ question.user }}</a></h5>
+                        <h5 class="pb-1"><a href="user-profile.html">{{ question.user.username }}</a></h5>
                         <div class="stats fs-12 d-flex align-items-center lh-18">
                           <span class="text-black pr-2" title="Reputation score">224</span>
                           <span class="pr-2 d-inline-flex align-items-center" title="Gold badge"><span
@@ -286,7 +286,6 @@ export default {
       axios.get(api_domain + 'questions')
         .then(response => {
           this.questions = response.data;
-          console.log(this.questions);
         })
         .catch(error => {
           console.log(error);

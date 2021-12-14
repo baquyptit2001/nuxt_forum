@@ -13,7 +13,7 @@
           To ask, to learn, to share, to grow.
         </p>
         <div class="hero-btn-box py-4">
-          <a href="signup.html" class="btn theme-btn mr-2">Join the community</a>
+          <NuxtLink :to="{name: 'accounts-signup'}"><a href="signup.html" class="btn theme-btn mr-2">Join the community</a></NuxtLink>
           <NuxtLink :to="{name: 'questions-add'}" ><a href="#" class="btn theme-btn theme-btn-outline">Ask a Question</a></NuxtLink>
         </div>
       </div><!-- end hero-content -->
