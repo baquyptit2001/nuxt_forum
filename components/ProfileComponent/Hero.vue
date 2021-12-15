@@ -29,7 +29,7 @@
             </div><!-- end media -->
           </div><!-- end hero-content -->
         </div><!-- end col-lg-8 -->
-        <div class="col-lg-4">
+        <div class="col-lg-4" v-if="edit_profile">
           <div class="hero-btn-box text-right py-3">
             <NuxtLink :to="{name: 'accounts-profile-edit'}"><a href="setting.html" class="btn theme-btn theme-btn-outline theme-btn-outline-gray"><i class="la la-gear mr-1"></i> Edit Profile</a></NuxtLink>
           </div>
@@ -56,18 +56,19 @@ import {api_domain} from "../../constants/constants";
 
 export default {
   name: "Hero",
-  data() {
-    return {
-    }
-  },
-  created() {
-    console.log(this.user);
-  },
   props: {
     user: {
       type: Object,
       required: true
     }
+  },
+  data() {
+    return {
+      edit_profile: null,
+    }
+  },
+  created() {
+    this.edit_profile = (this.$route.params.id === Cookies.get("user.id"));
   },
   methods:{
   }

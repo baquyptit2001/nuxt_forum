@@ -136,7 +136,7 @@
                       </a>
                       <div class="media-body d-flex flex-wrap align-items-center justify-content-between">
                         <div>
-                          <h5 class="pb-1"><a href="user-profile.html">{{ question.username }}</a></h5>
+                          <h5 class="pb-1"><NuxtLink :to="{name: 'accounts-profile-id', params: {id: question.user_id}}"><a href="user-profile.html">{{ question.username }}</a></NuxtLink></h5>
                           <div class="stats fs-12 d-flex align-items-center lh-18">
                             <span class="text-black pr-2">224,110</span>
                             <span class="pr-2 d-inline-flex align-items-center"><span class="ball gold"></span>16</span>
@@ -368,7 +368,7 @@
                       </a>
                       <div class="media-body d-flex align-items-center justify-content-between">
                         <div>
-                          <h5 class="pb-1"><a href="user-profile.html">{{ question.best_answer.user.name }}</a></h5>
+                          <h5 class="pb-1"><NuxtLink :to="{name: 'accounts-profile-id', params: {id: question.best_answer.user.id}}"><a href="user-profile.html">{{ question.best_answer.user.name }}</a></NuxtLink></h5>
                           <div class="stats fs-12 d-flex align-items-center lh-18">
                             <span class="text-black pr-2">15.5k</span>
                             <span class="pr-2 d-inline-flex align-items-center"><span class="ball gold"></span>3</span>
@@ -401,10 +401,10 @@
                         <div class="comment-body">
                           <span class="comment-copy">{{ reply.body }}</span>
                           <span class="comment-separated">-</span>
-                          <a href="user-profile.html" class="comment-user owner"
-                             title="224,110 reputation">{{ reply.replier }}</a>
+                          <NuxtLink :to="{name: 'accounts-profile-id', params:{id: reply.user.id}}"><a href="user-profile.html" class="comment-user owner"
+                             title="224,110 reputation">{{ reply.user.name }}</a></NuxtLink>
                           <span class="comment-separated">-</span>
-                          <a href="#" class="comment-date">{{ reply.date_created }}</a>
+                          <a href="#" class="comment-date">{{ reply.created_at }}</a>
                         </div>
                       </li>
                     </ul>
@@ -523,7 +523,7 @@
                       </a>
                       <div class="media-body d-flex align-items-center justify-content-between">
                         <div>
-                          <h5 class="pb-1"><a href="user-profile.html">{{ answer.user.name }}</a></h5>
+                          <h5 class="pb-1"><NuxtLink :to="{name: 'accounts-profile-id', params: {id: answer.user.id}}"><a href="user-profile.html">{{ answer.user.name }}</a></NuxtLink></h5>
                           <div class="stats fs-12 d-flex align-items-center lh-18">
                             <span class="text-black pr-2">15.5k</span>
                             <span class="pr-2 d-inline-flex align-items-center"><span class="ball gold"></span>3</span>

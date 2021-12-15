@@ -126,7 +126,7 @@
                   <h6 class="dropdown-header">Hi, {{ user.username }}</h6>
                   <div class="dropdown-divider border-top-gray mb-0"></div>
                   <div class="dropdown-item-list">
-                    <NuxtLink :to="{name: 'accounts-profile'}"><a class="dropdown-item" href="user-profile.html"><i class="la la-user mr-2"></i>Profile</a></NuxtLink>
+                    <NuxtLink :to="{name: 'accounts-profile-id', params: {id: user.id}}"><a class="dropdown-item" href="user-profile.html"><i class="la la-user mr-2"></i>Profile</a></NuxtLink>
                     <a class="dropdown-item" href="notifications.html"><i class="la la-bell mr-2"></i>Notifications</a>
                     <a class="dropdown-item" href="referrals.html"><i class="la la-user-plus mr-2"></i>Referrals</a>
                     <a class="dropdown-item" href="setting.html"><i class="la la-gear mr-2"></i>Settings</a>

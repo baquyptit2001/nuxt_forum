@@ -23,7 +23,7 @@
           </div><!-- end col-lg-8 -->
           <div class="col-lg-4">
             <div class="hero-btn-box text-right py-3">
-              <NuxtLink :to="{name: 'accounts-profile'}"><a href="user-profile.html" class="btn theme-btn theme-btn-outline theme-btn-outline-gray"><i class="la la-user mr-1"></i>View Profile</a></NuxtLink>
+              <NuxtLink :to="{name: 'accounts-profile-id', params: {id: user.id}}"><a href="user-profile.html" class="btn theme-btn theme-btn-outline theme-btn-outline-gray"><i class="la la-user mr-1"></i>View Profile</a></NuxtLink>
             </div>
           </div><!-- end col-lg-4 -->
         </div><!-- end row -->

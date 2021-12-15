@@ -38,7 +38,7 @@ export default {
   },
   methods: {
     getUser() {
-      axios.get(api_domain + "accounts/info", {
+      axios.get(api_domain + "accounts/info/"+this.$route.params.id , {
         headers: {
           Authorization: "Bearer " + Cookies.get("access_token")
         }
