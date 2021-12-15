@@ -111,15 +111,27 @@
             <div class="nav-right-button">
               <NuxtLink v-if="!access_token" :to="{ name: 'accounts-login' }"><a href="#" class="btn theme-btn"><i
                 class="la la-user mr-1"></i> Account</a></NuxtLink>
-              <div class="dropdown" v-else>
-                <button class="btn btn-primary dropdown-toggle" type="button" id="dropdownMenuButton"
-                        data-toggle="dropdown" aria-expanded="false">
-                  {{ user.username }}
-                </button>
-                <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
-                  <a class="dropdown-item" href="#">Profile</a>
-                  <div class="dropdown-divider"></div>
-                  <a class="dropdown-item" href="#" @click="logout">Log Out</a>
+              <div class="dropdown user-dropdown" v-else>
+                <a class="nav-link dropdown-toggle dropdown--toggle pl-2" href="#" id="userMenuDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                  <div class="media media-card media--card shadow-none mb-0 rounded-0 align-items-center bg-transparent">
+                    <div class="media-img media-img-xs flex-shrink-0 rounded-full mr-2">
+                      <img :src="user.avatar" alt="avatar" id="profile_avatar" class="rounded-full">
+                    </div>
+                    <div class="media-body p-0 border-left-0">
+                      <h5 class="fs-14">{{ user.username }}</h5>
+                    </div>
+                  </div>
+                </a>
+                <div class="dropdown-menu dropdown--menu dropdown-menu-right mt-3 keep-open" aria-labelledby="userMenuDropdown">
+                  <h6 class="dropdown-header">Hi, {{ user.username }}</h6>
+                  <div class="dropdown-divider border-top-gray mb-0"></div>
+                  <div class="dropdown-item-list">
+                    <NuxtLink :to="{name: 'accounts-profile'}"><a class="dropdown-item" href="user-profile.html"><i class="la la-user mr-2"></i>Profile</a></NuxtLink>
+                    <a class="dropdown-item" href="notifications.html"><i class="la la-bell mr-2"></i>Notifications</a>
+                    <a class="dropdown-item" href="referrals.html"><i class="la la-user-plus mr-2"></i>Referrals</a>
+                    <a class="dropdown-item" href="setting.html"><i class="la la-gear mr-2"></i>Settings</a>
+                    <a class="dropdown-item" href="#" @click="logout"><i class="la la-power-off mr-2"></i>Log out</a>
+                  </div>
                 </div>
               </div>
             </div><!-- end nav-right-button -->
@@ -213,6 +225,7 @@ export default {
         username: null,
         email: null,
         id: null,
+        avatar: null,
       },
       access_token: null,
     }
@@ -223,6 +236,11 @@ export default {
     } else {
       this.getUser()
     }
+  },
+  mounted() {
+    this.$root.$on("editProfile", () => {
+      this.getUser()
+    })
   },
   methods: {
     isLogged() {
@@ -245,8 +263,9 @@ export default {
     getUser() {
       this.access_token = Cookies.get('access_token');
       this.user.id = Cookies.get('user.id');
-      this.user.username = Cookies.get('user.username');
+      this.user.username = Cookies.get('user.name');
       this.user.email = Cookies.get('user.email');
+      this.user.avatar = Cookies.get('user.avatar');
     },
     logout() {
       axios.get(api_domain + 'accounts/log-out', {
@@ -261,7 +280,7 @@ export default {
           });
           Cookies.remove('access_token');
           Cookies.remove('user.id');
-          Cookies.remove('user.username');
+          Cookies.remove('user.name');
           Cookies.remove('user.email');
           this.$router.push({name: 'accounts-login'});
         }

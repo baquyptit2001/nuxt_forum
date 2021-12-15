@@ -132,7 +132,7 @@
                     </div><!-- end post-menu -->
                     <div class="media media-card user-media owner align-items-center">
                       <a href="user-profile.html" class="media-img d-block">
-                        <img src="~assets/images/img3.jpg" alt="avatar">
+                        <img :src="question.avatar" alt="avatar">
                       </a>
                       <div class="media-body d-flex flex-wrap align-items-center justify-content-between">
                         <div>
@@ -364,11 +364,11 @@
                     </div><!-- end post-menu -->
                     <div class="media media-card user-media align-items-center">
                       <a href="user-profile.html" class="media-img d-block">
-                        <img src="~assets/images/img4.jpg" alt="avatar">
+                        <img :src="question.best_answer.user.avatar" alt="avatar">
                       </a>
                       <div class="media-body d-flex align-items-center justify-content-between">
                         <div>
-                          <h5 class="pb-1"><a href="user-profile.html">{{ question.best_answer.user.username }}</a></h5>
+                          <h5 class="pb-1"><a href="user-profile.html">{{ question.best_answer.user.name }}</a></h5>
                           <div class="stats fs-12 d-flex align-items-center lh-18">
                             <span class="text-black pr-2">15.5k</span>
                             <span class="pr-2 d-inline-flex align-items-center"><span class="ball gold"></span>3</span>
@@ -519,11 +519,11 @@
                     </div><!-- end post-menu -->
                     <div class="media media-card user-media align-items-center">
                       <a href="user-profile.html" class="media-img d-block">
-                        <img src="~assets/images/img4.jpg" alt="avatar">
+                        <img :src="answer.user.avatar" alt="avatar">
                       </a>
                       <div class="media-body d-flex align-items-center justify-content-between">
                         <div>
-                          <h5 class="pb-1"><a href="user-profile.html">{{ answer.user.username }}</a></h5>
+                          <h5 class="pb-1"><a href="user-profile.html">{{ answer.user.name }}</a></h5>
                           <div class="stats fs-12 d-flex align-items-center lh-18">
                             <span class="text-black pr-2">15.5k</span>
                             <span class="pr-2 d-inline-flex align-items-center"><span class="ball gold"></span>3</span>
