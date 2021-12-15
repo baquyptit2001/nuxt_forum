@@ -37,8 +37,8 @@
                     <span class="vote-text d-block fs-13 lh-18">votes</span>
                   </div>
                   <div :class="'answer-block my-2 ' + question.status">
-                    <span class="answer-counts d-block lh-20 fw-medium">3</span>
-                    <span class="answer-text d-block fs-13 lh-18">answers</span>
+                    <span class="answer-counts d-block lh-20 fw-medium">{{ question.answer_count }}</span>
+                    <span class="answer-text d-block fs-13 lh-18">{{ pluralize('answer', question.answer_count) }}</span>
                   </div>
                   <div class="view-block">
                     <span class="view-counts d-block lh-20 fw-medium">{{ question.views }}</span>
@@ -268,6 +268,7 @@
 import axios from "axios";
 import {api_domain} from "~/constants/constants";
 import Cookies from "js-cookie";
+import Pluralize from "pluralize";
 
 export default {
   name: "Question",
@@ -275,6 +276,7 @@ export default {
     return {
       questions: [],
       access_token: "",
+      pluralize: Pluralize,
     }
   },
   created() {

@@ -218,12 +218,36 @@ export default {
     }
   },
   created() {
-    this.access_token = Cookies.get('access_token');
-    this.user.id = Cookies.get('user.id');
-    this.user.username = Cookies.get('user.username');
-    this.user.email = Cookies.get('user.email');
+    if (Cookies.get("access_token")) {
+      this.isLogged()
+    } else {
+      this.getUser()
+    }
   },
   methods: {
+    isLogged() {
+      axios.get(api_domain + 'accounts/isLogged', {
+        headers: {
+          'Authorization': 'Bearer ' + Cookies.get("access_token"),
+        }
+      })
+        .then(response => {
+          if (response.data) {
+            this.getUser()
+          } else {
+            document.cookie.split(";").forEach(function(c) { document.cookie = c.replace(/^ +/, "").replace(/=.*/, "=;expires=" + new Date().toUTCString() + ";path=/"); });
+          }
+        })
+        .catch(error => {
+          console.log(error);
+        });
+    },
+    getUser() {
+      this.access_token = Cookies.get('access_token');
+      this.user.id = Cookies.get('user.id');
+      this.user.username = Cookies.get('user.username');
+      this.user.email = Cookies.get('user.email');
+    },
     logout() {
       axios.get(api_domain + 'accounts/log-out', {
         headers: {

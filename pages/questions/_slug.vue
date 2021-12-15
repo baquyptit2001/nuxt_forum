@@ -83,11 +83,11 @@
               <div class="question d-flex">
                 <div class="votes votes-styled w-auto">
                   <div id="vote" class="upvotejs">
-                    <a class="upvote upvote-on" data-toggle="tooltip" data-placement="right"
-                       title="This question is useful"></a>
-                    <span class="count">1</span>
-                    <a class="downvote" data-toggle="tooltip" data-placement="right"
-                       title="This question is not useful"></a>
+                    <a :class="'upvote ' + question.vote_up" data-toggle="tooltip" data-placement="right"
+                       title="This question is useful" @click="vote_question(1)"></a>
+                    <span class="count">{{ question.vote }}</span>
+                    <a :class="'downvote ' + question.vote_down" data-toggle="tooltip" data-placement="right"
+                       title="This question is not useful" @click="vote_question(-1)"></a>
                     <a class="star star-on" data-toggle="tooltip" data-placement="right"
                        title="Bookmark this question."></a>
                   </div>
@@ -314,11 +314,11 @@
               <div class="answer-wrap d-flex" v-if="question.best_answer">
                 <div class="votes votes-styled w-auto">
                   <div id="vote2" class="upvotejs">
-                    <a class="upvote upvote-on" data-toggle="tooltip" data-placement="right"
-                       title="This question is useful"></a>
-                    <span class="count">69</span>
-                    <a class="downvote" data-toggle="tooltip" data-placement="right"
-                       title="This question is not useful"></a>
+                    <a :class="'upvote ' + question.best_answer.vote_up" data-toggle="tooltip" data-placement="right"
+                       title="This question is useful" @click="vote_answer(1, question.best_answer.id)"></a>
+                    <span class="count">{{ question.best_answer.vote }}</span>
+                    <a :class="'downvote ' + question.best_answer.vote_down" data-toggle="tooltip" data-placement="right"
+                       title="This question is not useful" @click="vote_answer(-1, question.best_answer.id)"></a>
                     <a class="star check star-on mark-best" data-toggle="tooltip" data-placement="right"
                        title="The question owner accepted this answer"
                        @click="choose_best_answer(question.best_answer.id)"></a>
@@ -470,11 +470,11 @@
               <div class="answer-wrap d-flex" v-for="answer in show_answer">
                 <div class="votes votes-styled w-auto">
                   <div id="vote2" class="upvotejs">
-                    <a class="upvote upvote-on" data-toggle="tooltip" data-placement="right"
-                       title="This question is useful"></a>
-                    <span class="count">2</span>
-                    <a class="downvote" data-toggle="tooltip" data-placement="right"
-                       title="This question is not useful"></a>
+                    <a :class="'upvote ' + answer.vote_up" data-toggle="tooltip" data-placement="right"
+                       title="This question is useful" @click="vote_answer(1, answer.id)"></a>
+                    <span class="count">{{ answer.vote }}</span>
+                    <a :class="'downvote ' + answer.vote_down" data-toggle="tooltip" data-placement="right"
+                       title="This question is not useful" @click="vote_answer(-1, answer.id)"></a>
                     <a class="star check mark-best" data-toggle="tooltip" data-placement="right"
                        title="The question owner accepted this answer" @click="choose_best_answer(answer.id)"></a>
                   </div>
@@ -880,7 +880,11 @@ export default {
       this.show_answer = this.question.answers.slice(0, this.offset);
     },
     getQuestion() {
-      axios.get(api_domain + 'questions/' + this.$route.params.slug)
+      axios.get(api_domain + 'questions/' + this.$route.params.slug, {
+        headers: {
+          'Authorization': 'Bearer ' + Cookies.get('access_token')
+        }
+      })
         .then(response => {
           if (response.data.status_code === 404) {
             this.$notify({
@@ -894,6 +898,31 @@ export default {
           this.question = response.data;
           if (this.question.answer_count > 0) {
             this.show_answer = this.question.answers.slice(0, this.offset);
+          }
+        })
+        .catch(error => {
+          console.log(error);
+        });
+    },
+    vote_answer(vote, answer_id) {
+      axios.post(api_domain + 'questions/answer_vote', {
+        vote: vote,
+        answer_id: answer_id,
+        user_id: Cookies.get('user.id'),
+      }, {
+        headers: {
+          'Authorization': 'Bearer ' + Cookies.get('access_token')
+        }
+      })
+        .then(response => {
+          if (response.data.status_code === 200) {
+            this.$notify({
+              title: 'Thành công',
+              message: 'Vote thành công',
+              type: 'success',
+              duration: 3000,
+            });
+            this.getQuestion();
           }
         })
         .catch(error => {
@@ -977,6 +1006,29 @@ export default {
         this.$router.push({name: 'accounts-login'});
       }
     },
+    vote_question(vote) {
+      axios.post(api_domain + 'questions/vote', {
+        question_id: this.question.id,
+        vote: vote,
+        user_id: Cookies.get('user.id'),
+      }, {
+        headers: {
+          'Authorization': 'Bearer ' + Cookies.get('access_token'),
+        }
+      })
+        .then(response => {
+          this.$notify({
+            title: 'Thành công',
+            message: 'Bình chọn thành công',
+            type: 'success',
+            duration: 3000,
+          });
+          this.getQuestion();
+        })
+        .catch(error => {
+          console.log(error);
+        });
+    },
     replyAnswer(answer_id) {
       if (this.isLogin) {
         const access_token = Cookies.get('access_token');
@@ -1027,6 +1079,10 @@ export default {
 }
 
 .mark-best {
+  cursor: pointer !important;
+}
+
+.downvote,.upvote {
   cursor: pointer !important;
 }
 </style>

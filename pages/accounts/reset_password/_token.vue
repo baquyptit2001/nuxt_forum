@@ -96,6 +96,13 @@ export default {
           }
         })
         .catch(error => {
+          if (error.response.data.message) {
+            this.$notify({
+              title: 'Thất bại',
+              type: 'error',
+              message: error.response.data.message
+            });
+          }
           this.$notify({
             title: 'Thất bại',
             type: 'error',
