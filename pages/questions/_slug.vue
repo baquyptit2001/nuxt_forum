@@ -905,6 +905,16 @@ export default {
         });
     },
     vote_answer(vote, answer_id) {
+      if (!Cookies.get('access_token')){
+        this.$notify({
+          title: 'Bạn chưa đăng nhập',
+          message: 'Vui lòng đăng nhập',
+          type: 'error',
+          duration: 3000,
+        });
+        this.$router.push({name: 'accounts-login'});
+        return
+      }
       axios.post(api_domain + 'questions/answer_vote', {
         vote: vote,
         answer_id: answer_id,
@@ -1007,6 +1017,16 @@ export default {
       }
     },
     vote_question(vote) {
+      if (!Cookies.get('access_token')){
+        this.$notify({
+          title: 'Bạn chưa đăng nhập',
+          message: 'Vui lòng đăng nhập',
+          type: 'error',
+          duration: 3000,
+        });
+        this.$router.push({name: 'accounts-login'});
+        return
+      }
       axios.post(api_domain + 'questions/vote', {
         question_id: this.question.id,
         vote: vote,
