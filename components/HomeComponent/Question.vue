@@ -285,7 +285,7 @@ export default {
 
     },
     getQuestions() {
-      axios.get(api_domain + 'questions/' + this.pageSize + '/' + this.currentPage)
+      axios.get(api_domain + 'questions/' + this.pageSize + '/' + this.currentPage + '?page=' + this.currentPage)
         .then(response => {
           this.questions = response.data[0];
           this.question_count = response.data[1];
