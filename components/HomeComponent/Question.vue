@@ -259,7 +259,7 @@ export default {
       questions: [],
       access_token: "",
       pluralize: Pluralize,
-      currentPage: 1,
+      currentPage: this.$store.state.questions.currentPage,
       pageSize: 5,
       question_count: 0,
       optionPage: [
@@ -289,6 +289,7 @@ export default {
         .then(response => {
           this.questions = response.data[0];
           this.question_count = response.data[1];
+          this.$store.commit("questions/setPage", this.currentPage);
         })
         .catch(error => {
           console.log(error);

@@ -3,8 +3,7 @@ import mutations from './mutations';
 import getters from './getters';
 
 const defaultState = {
-  access_token: 1,
-  user: ''
+  currentPage: 1,
 };
 
 const inBrowser= typeof window !== 'undefined';

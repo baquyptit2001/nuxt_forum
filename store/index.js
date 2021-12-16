@@ -1,11 +1,11 @@
 import Vuex from 'vuex'
-import AccountsModule from './accounts'
+import QuestionsModule from './questions'
 
 const createStore = () => {
   return new Vuex.Store({
     namespaced: true,
     modules: {
-      accounts: AccountsModule
+      questions: QuestionsModule
     }
   })
 }

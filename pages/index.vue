@@ -1,7 +1,7 @@
 <template>
   <div>
     <TopContent/>
-    <Question/>
+    <Question keep-alive/>
     <CTA/>
   </div>
 </template>
