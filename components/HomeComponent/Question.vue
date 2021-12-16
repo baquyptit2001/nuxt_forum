@@ -27,6 +27,14 @@
                 <h3 class="fs-18 fw-medium">All Questions</h3>
                 <p class="pt-1 fs-14 fw-medium lh-20">21,287 questions</p>
               </div>
+              <el-select v-model="pageSize" placeholder="Select" @change="getQuestions">
+                <el-option
+                  v-for="item in optionPage"
+                  :key="item.value"
+                  :value="item.value"
+                >
+                </el-option>
+              </el-select>
             </div><!-- end filters -->
             <div class="questions-snippet border-top border-top-gray">
               <div v-for="question in questions"
@@ -80,41 +88,15 @@
                 </div>
               </div><!-- end media -->
             </div><!-- end questions-snippet -->
-            <div class="pager d-flex flex-wrap align-items-center justify-content-between pt-30px px-3">
-              <div>
-                <nav aria-label="Page navigation example">
-                  <ul class="pagination generic-pagination pr-1">
-                    <li class="page-item">
-                      <a class="page-link" href="#" aria-label="Previous">
-                        <span aria-hidden="true"><i class="la la-arrow-left"></i></span>
-                        <span class="sr-only">Previous</span>
-                      </a>
-                    </li>
-                    <li class="page-item active"><a class="page-link" href="#">1</a></li>
-                    <li class="page-item"><a class="page-link" href="#">2</a></li>
-                    <li class="page-item"><a class="page-link" href="#">3</a></li>
-                    <li class="page-item"><a class="page-link" href="#">4</a></li>
-                    <li class="page-item">
-                      <a class="page-link" href="#" aria-label="Next">
-                        <span aria-hidden="true"><i class="la la-arrow-right"></i></span>
-                        <span class="sr-only">Next</span>
-                      </a>
-                    </li>
-                  </ul>
-                </nav>
-                <p class="fs-13 pt-2">Showing 1-10 results of 50,577 questions</p>
-              </div>
-              <div class="filter-option-box w-20">
-                <select class="select-container">
-                  <option selected="" value="10">10 per page</option>
-                  <option value="15">15 per page</option>
-                  <option value="20">20 per page</option>
-                  <option value="30">30 per page</option>
-                  <option value="40">40 per page</option>
-                  <option value="50">50 per page</option>
-                </select>
-              </div>
-            </div>
+            <el-pagination
+              style="margin-top: 50px ;justify-content: center; display: flex"
+              background
+              layout="prev, pager, next"
+              :page-size="pageSize"
+              :current-page.sync="currentPage"
+              @current-change="getQuestions()"
+              :total="question_count">
+            </el-pagination>
           </div><!-- end question-main-bar -->
         </div><!-- end col-lg-7 -->
         <div class="col-lg-3">
@@ -277,6 +259,21 @@ export default {
       questions: [],
       access_token: "",
       pluralize: Pluralize,
+      currentPage: 1,
+      pageSize: 5,
+      question_count: 0,
+      optionPage: [
+        {
+          value: 5,
+          key: 5
+        }, {
+        value: 10,
+          key: 10
+        }, {
+        value: 20,
+          key: 20
+        }
+      ]
     }
   },
   created() {
@@ -284,10 +281,14 @@ export default {
     this.access_token = Cookies.get("access_token");
   },
   methods: {
+    change(){
+
+    },
     getQuestions() {
-      axios.get(api_domain + 'questions')
+      axios.get(api_domain + 'questions/' + this.pageSize + '/' + this.currentPage)
         .then(response => {
-          this.questions = response.data;
+          this.questions = response.data[0];
+          this.question_count = response.data[1];
         })
         .catch(error => {
           console.log(error);

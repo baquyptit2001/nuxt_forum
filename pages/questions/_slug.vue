@@ -556,10 +556,10 @@
                         <div class="comment-body">
                           <span class="comment-copy">{{ reply.body }}</span>
                           <span class="comment-separated">-</span>
-                          <a href="user-profile.html" class="comment-user owner"
-                             title="224,110 reputation">{{ reply.replier }}</a>
+                          <NuxtLink :to="{name: 'accounts-profile-id', params: {id: reply.user.id}}"><a href="user-profile.html" class="comment-user owner"
+                             title="224,110 reputation">{{ reply.user.name }}</a></NuxtLink>
                           <span class="comment-separated">-</span>
-                          <a href="#" class="comment-date">{{ reply.date_created }}</a>
+                          <a href="#" class="comment-date">{{ reply.created_at }}</a>
                         </div>
                       </li>
                     </ul>
