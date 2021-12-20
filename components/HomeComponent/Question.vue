@@ -36,7 +36,8 @@
                 </el-option>
               </el-select>
             </div><!-- end filters -->
-            <div class="questions-snippet border-top border-top-gray">
+            <loading v-if="$fetchState.pending" color="primary" size="md" />
+            <div v-else class="questions-snippet border-top border-top-gray">
               <div v-for="question in questions"
                 class="media media-card rounded-0 shadow-none mb-0 bg-transparent p-3 border-bottom border-bottom-gray">
                 <div class="votes text-center votes-2">
@@ -251,16 +252,19 @@ import axios from "axios";
 import {api_domain} from "~/constants/constants";
 import Cookies from "js-cookie";
 import Pluralize from "pluralize";
+import Loading from "~/components/Loading";
 
 export default {
   name: "Question",
+  components: {Loading},
+
   data() {
     return {
       questions: [],
       access_token: "",
       pluralize: Pluralize,
       currentPage: this.$store.state.questions.currentPage,
-      pageSize: 5,
+      pageSize: this.$store.state.questions.pageSize,
       question_count: 0,
       optionPage: [
         {
@@ -276,8 +280,9 @@ export default {
       ]
     }
   },
-  created() {
-    this.getQuestions();
+  async fetch() {
+    await this.getQuestions();
+    await new Promise(r => setTimeout(r, 1000));
     this.access_token = Cookies.get("access_token");
   },
   methods: {
@@ -290,6 +295,7 @@ export default {
           this.questions = response.data[0];
           this.question_count = response.data[1];
           this.$store.commit("questions/setPage", this.currentPage);
+          this.$store.commit("questions/setPageSize", this.pageSize);
         })
         .catch(error => {
           console.log(error);

@@ -4,6 +4,7 @@ import getters from './getters';
 
 const defaultState = {
   currentPage: 1,
+  pageSize: 5,
 };
 
 const inBrowser= typeof window !== 'undefined';
