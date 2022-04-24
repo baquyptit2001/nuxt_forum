@@ -27,6 +27,11 @@
                        v-model="user.email">
               </div><!-- end form-group -->
               <div class="form-group">
+                <label class="fs-14 text-black fw-medium lh-18">Phone</label>
+                <input type="text" name="phone" class="form-control form--control" placeholder="Phone number"
+                       v-model="user.phone">
+              </div><!-- end form-group -->
+              <div class="form-group">
                 <label class="fs-14 text-black fw-medium lh-18">Password</label>
                 <div class="input-group mb-1">
                   <input class="form-control form--control password-field" type="password" name="password"
@@ -142,7 +147,8 @@ export default {
       user: {
         username: "",
         password: "",
-        email: ""
+        email: "",
+        phone: "",
       }
     }
   },
