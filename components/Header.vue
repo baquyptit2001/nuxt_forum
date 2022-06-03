@@ -104,7 +104,7 @@
             <form method="post" class="mr-4">
               <div class="form-group mb-0">
                 <input class="form-control form--control form--control-bg-gray" type="text" name="search"
-                       placeholder="Type your search words...">
+                       placeholder="Type your search words..." v-model="search" v-on:keyup="typingSearch">
                 <button class="form-btn" type="button"><i class="la la-search"></i></button>
               </div>
             </form>
@@ -228,6 +228,7 @@ export default {
         avatar: null,
       },
       access_token: null,
+      search: null,
     }
   },
   created() {
@@ -266,6 +267,9 @@ export default {
       this.user.username = Cookies.get('user.name');
       this.user.email = Cookies.get('user.email');
       this.user.avatar = Cookies.get('user.avatar');
+    },
+    typingSearch() {
+      console.log(this.search)
     },
     logout() {
       axios.get(api_domain + 'accounts/log-out', {
