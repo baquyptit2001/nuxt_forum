@@ -36,10 +36,10 @@
                 </el-option>
               </el-select>
             </div><!-- end filters -->
-            <loading v-if="$fetchState.pending" color="primary" size="md" />
+            <loading v-if="$fetchState.pending" color="primary" size="md"/>
             <div v-else class="questions-snippet border-top border-top-gray">
               <div v-for="question in questions"
-                class="media media-card rounded-0 shadow-none mb-0 bg-transparent p-3 border-bottom border-bottom-gray">
+                   class="media media-card rounded-0 shadow-none mb-0 bg-transparent p-3 border-bottom border-bottom-gray">
                 <div class="votes text-center votes-2">
                   <div class="vote-block">
                     <span class="vote-counts d-block text-center pr-0 lh-20 fw-medium">{{ question.vote }}</span>
@@ -47,7 +47,9 @@
                   </div>
                   <div :class="'answer-block my-2 ' + question.status">
                     <span class="answer-counts d-block lh-20 fw-medium">{{ question.answer_count }}</span>
-                    <span class="answer-text d-block fs-13 lh-18">{{ pluralize('answer', question.answer_count) }}</span>
+                    <span class="answer-text d-block fs-13 lh-18">{{
+                        pluralize('answer', question.answer_count)
+                      }}</span>
                   </div>
                   <div class="view-block">
                     <span class="view-counts d-block lh-20 fw-medium">{{ question.views }}</span>
@@ -55,21 +57,27 @@
                   </div>
                 </div>
                 <div class="media-body">
-                  <h5 class="mb-2 fw-medium"><NuxtLink :to="{name: 'questions-slug', params: {slug: question.slug}}"><a href="#">{{ question.title }}</a></NuxtLink></h5>
+                  <h5 class="mb-2 fw-medium">
+                    <NuxtLink :to="{name: 'questions-slug', params: {slug: question.slug}}"><a
+                      href="#">{{ question.title }}</a></NuxtLink>
+                  </h5>
                   <p class="mb-2 truncate lh-20 fs-15" v-html="question.question"></p>
                   <div class="tags">
-                    <a href="#" class="tag-link">javascript</a>
-                    <a href="#" class="tag-link">bootstrap-4</a>
-                    <a href="#" class="tag-link">jquery</a>
-                    <a href="#" class="tag-link">select</a>
+                    <a class="tag-link" href="#">javascript</a>
+                    <a class="tag-link" href="#">bootstrap-4</a>
+                    <a class="tag-link" href="#">jquery</a>
+                    <a class="tag-link" href="#">select</a>
                   </div>
                   <div class="media media-card user-media align-items-center px-0 border-bottom-0 pb-0">
-                    <a href="user-profile.html" class="media-img d-block">
+                    <a class="media-img d-block" href="user-profile.html">
                       <img :src="question.avatar" alt="avatar">
                     </a>
                     <div class="media-body d-flex flex-wrap align-items-center justify-content-between">
                       <div>
-                        <h5 class="pb-1"><NuxtLink :to="{name: 'accounts-profile-id', params: {id: question.user.id}}"><a href="user-profile.html">{{ question.username }}</a></NuxtLink></h5>
+                        <h5 class="pb-1">
+                          <NuxtLink :to="{name: 'accounts-profile-id', params: {id: question.user.id}}"><a
+                            href="user-profile.html">{{ question.username }}</a></NuxtLink>
+                        </h5>
                         <div class="stats fs-12 d-flex align-items-center lh-18">
                           <span class="text-black pr-2" title="Reputation score">224</span>
                           <span class="pr-2 d-inline-flex align-items-center" title="Gold badge"><span
@@ -90,13 +98,13 @@
               </div><!-- end media -->
             </div><!-- end questions-snippet -->
             <el-pagination
-              style="margin-top: 50px ;justify-content: center; display: flex"
+              :current-page.sync="currentPage"
+              :page-size="pageSize"
+              :total="question_count"
               background
               layout="prev, pager, next"
-              :page-size="pageSize"
-              :current-page.sync="currentPage"
-              @current-change="getQuestions()"
-              :total="question_count">
+              style="margin-top: 50px ;justify-content: center; display: flex"
+              @current-change="getQuestions()">
             </el-pagination>
           </div><!-- end question-main-bar -->
         </div><!-- end col-lg-7 -->
@@ -113,7 +121,7 @@
                       <small class="meta">
                         <span class="pr-1">2 mins ago</span>
                         <span class="pr-1">. by</span>
-                        <a href="#" class="author">Sudhir Kumbhare</a>
+                        <a class="author" href="#">Sudhir Kumbhare</a>
                       </small>
                     </div>
                   </div><!-- end media -->
@@ -124,7 +132,7 @@
                       <small class="meta">
                         <span class="pr-1">48 mins ago</span>
                         <span class="pr-1">. by</span>
-                        <a href="#" class="author">wimax</a>
+                        <a class="author" href="#">wimax</a>
                       </small>
                     </div>
                   </div><!-- end media -->
@@ -135,7 +143,7 @@
                       <small class="meta">
                         <span class="pr-1">1 hour ago</span>
                         <span class="pr-1">. by</span>
-                        <a href="#" class="author">Antonin gavrel</a>
+                        <a class="author" href="#">Antonin gavrel</a>
                       </small>
                     </div>
                   </div><!-- end media -->
@@ -148,86 +156,86 @@
                 <div class="divider"><span></span></div>
                 <div class="tags pt-4">
                   <div class="tag-item">
-                    <a href="#" class="tag-link tag-link-md">analytics</a>
+                    <a class="tag-link tag-link-md" href="#">analytics</a>
                     <span class="item-multiplier fs-13">
                                     <span>×</span>
                                     <span>32924</span>
                                 </span>
                   </div><!-- end tag-item -->
                   <div class="tag-item">
-                    <a href="#" class="tag-link tag-link-md">computer</a>
+                    <a class="tag-link tag-link-md" href="#">computer</a>
                     <span class="item-multiplier fs-13">
                                     <span>×</span>
                                     <span>32924</span>
                                 </span>
                   </div><!-- end tag-item -->
                   <div class="tag-item">
-                    <a href="#" class="tag-link tag-link-md">python</a>
+                    <a class="tag-link tag-link-md" href="#">python</a>
                     <span class="item-multiplier fs-13">
                                     <span>×</span>
                                     <span>32924</span>
                                 </span>
                   </div><!-- end tag-item -->
                   <div class="tag-item">
-                    <a href="#" class="tag-link tag-link-md">javascript</a>
+                    <a class="tag-link tag-link-md" href="#">javascript</a>
                     <span class="item-multiplier fs-13">
                                     <span>×</span>
                                     <span>32924</span>
                                 </span>
                   </div><!-- end tag-item -->
                   <div class="tag-item">
-                    <a href="#" class="tag-link tag-link-md">c#</a>
+                    <a class="tag-link tag-link-md" href="#">c#</a>
                     <span class="item-multiplier fs-13">
                                     <span>×</span>
                                     <span>32924</span>
                                 </span>
                   </div><!-- end tag-item -->
-                  <div class="collapse" id="showMoreTags">
+                  <div id="showMoreTags" class="collapse">
                     <div class="tag-item">
-                      <a href="#" class="tag-link tag-link-md">java</a>
+                      <a class="tag-link tag-link-md" href="#">java</a>
                       <span class="item-multiplier fs-13">
                                     <span>×</span>
                                     <span>32924</span>
                                 </span>
                     </div><!-- end tag-item -->
                     <div class="tag-item">
-                      <a href="#" class="tag-link tag-link-md">swift</a>
+                      <a class="tag-link tag-link-md" href="#">swift</a>
                       <span class="item-multiplier fs-13">
                                     <span>×</span>
                                     <span>32924</span>
                                 </span>
                     </div><!-- end tag-item -->
                     <div class="tag-item">
-                      <a href="#" class="tag-link tag-link-md">html</a>
+                      <a class="tag-link tag-link-md" href="#">html</a>
                       <span class="item-multiplier fs-13">
                                     <span>×</span>
                                     <span>32924</span>
                                 </span>
                     </div><!-- end tag-item -->
                     <div class="tag-item">
-                      <a href="#" class="tag-link tag-link-md">angular</a>
+                      <a class="tag-link tag-link-md" href="#">angular</a>
                       <span class="item-multiplier fs-13">
                                     <span>×</span>
                                     <span>32924</span>
                                 </span>
                     </div><!-- end tag-item -->
                     <div class="tag-item">
-                      <a href="#" class="tag-link tag-link-md">flutter</a>
+                      <a class="tag-link tag-link-md" href="#">flutter</a>
                       <span class="item-multiplier fs-13">
                                     <span>×</span>
                                     <span>32924</span>
                                 </span>
                     </div><!-- end tag-item -->
                     <div class="tag-item">
-                      <a href="#" class="tag-link tag-link-md">machine-language</a>
+                      <a class="tag-link tag-link-md" href="#">machine-language</a>
                       <span class="item-multiplier fs-13">
                                     <span>×</span>
                                     <span>32924</span>
                                 </span>
                     </div><!-- end tag-item -->
                   </div><!-- end collapse -->
-                  <a class="collapse-btn fs-13" data-toggle="collapse" href="#showMoreTags" role="button"
-                     aria-expanded="false" aria-controls="showMoreTags">
+                  <a aria-controls="showMoreTags" aria-expanded="false" class="collapse-btn fs-13" data-toggle="collapse"
+                     href="#showMoreTags" role="button">
                     <span class="collapse-btn-hide">Show more<i class="la la-angle-down ml-1 fs-11"></i></span>
                     <span class="collapse-btn-show">Show less<i class="la la-angle-up ml-1 fs-11"></i></span>
                   </a>
@@ -271,10 +279,10 @@ export default {
           value: 5,
           key: 5
         }, {
-        value: 10,
+          value: 10,
           key: 10
         }, {
-        value: 20,
+          value: 20,
           key: 20
         }
       ]
@@ -286,7 +294,7 @@ export default {
     this.access_token = Cookies.get("access_token");
   },
   methods: {
-    change(){
+    change() {
 
     },
     getQuestions() {

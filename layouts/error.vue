@@ -10,7 +10,7 @@
       <span class="icon-shape icon-shape-7"></span>
       <div class="container">
         <div class="text-center">
-          <img src="~assets/images/error-img.png" alt="error-image" class="img-fluid mb-40px">
+          <img alt="error-image" class="img-fluid mb-40px" src="~assets/images/error-img.png">
           <h2 class="section-title pb-3">Oops! Page not found!</h2>
           <p class="section-desc pb-4">We're sorry, we couldn't find the page you requested.</p>
           <NuxtLink to="/"><a class="btn theme-btn" href="#"> Go to homepage </a></NuxtLink>

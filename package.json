@@ -5,7 +5,7 @@
   "scripts": {
     "dev": "nuxt",
     "build": "nuxt build",
-    "start": "npm run dev",
+    "start": "npm run dev -openssl-legacy-provider",
     "generate": "nuxt generate"
   },
   "dependencies": {

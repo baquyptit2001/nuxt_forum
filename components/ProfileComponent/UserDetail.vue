@@ -3,17 +3,17 @@
     <div class="container">
       <div class="row">
         <div class="col-lg-9">
-          <div class="tab-content" id="myTabContent">
-            <div class="tab-pane fade show active" id="user-profile" role="tabpanel" aria-labelledby="user-profile-tab">
+          <div id="myTabContent" class="tab-content">
+            <div id="user-profile" aria-labelledby="user-profile-tab" class="tab-pane fade show active" role="tabpanel">
               <div class="user-panel-main-bar">
                 <div class="user-panel mb-30px" v-html="user.description">
                 </div>
                 <div class="user-panel mb-30px pt-30px border-top border-top-gray">
                   <ul class="generic-list-item generic-list-item-bullet">
-                    <li class="pl-3"><a href="#" class="d-inline-block">ardensmith.com</a></li>
-                    <li class="pl-3"><a href="#" class="d-inline-block">Facebook</a></li>
-                    <li class="pl-3"><a href="#" class="d-inline-block">Twitter</a></li>
-                    <li class="pl-3"><a href="#" class="d-inline-block">Instagram</a></li>
+                    <li class="pl-3"><a class="d-inline-block" href="#">ardensmith.com</a></li>
+                    <li class="pl-3"><a class="d-inline-block" href="#">Facebook</a></li>
+                    <li class="pl-3"><a class="d-inline-block" href="#">Twitter</a></li>
+                    <li class="pl-3"><a class="d-inline-block" href="#">Instagram</a></li>
                   </ul>
                 </div><!-- end user-panel -->
                 <div class="user-panel mb-30px">
@@ -21,7 +21,8 @@
                     <div class="col-lg-4 responsive-column-half">
                       <div class="media media-card align-items-center shadow-none border border-gray p-3">
                         <div class="icon-element icon-element-sm mr-3 bg-1">
-                          <svg class="svg-icon-color-white" width="25" xmlns="http://www.w3.org/2000/svg" version="1.1" viewBox="-19 0 136 136.54819">
+                          <svg class="svg-icon-color-white" version="1.1" viewBox="-19 0 136 136.54819" width="25"
+                               xmlns="http://www.w3.org/2000/svg">
                             <g id="surface1">
                               <path
                                 d="M 21.710938 27.703125 L 76.128906 27.703125 C 77.15625 27.703125 77.988281 26.867188 77.988281 25.839844 C 77.988281 24.808594 77.15625 23.972656 76.128906 23.972656 L 21.710938 23.972656 C 20.679688 23.972656 19.84375 24.808594 19.84375 25.839844 C 19.84375 26.867188 20.679688 27.703125 21.710938 27.703125 Z M 21.710938 27.703125 "/>
@@ -55,7 +56,8 @@
                     <div class="col-lg-4 responsive-column-half">
                       <div class="media media-card align-items-center shadow-none border border-gray p-3">
                         <div class="icon-element icon-element-sm mr-3 bg-2">
-                          <svg class="svg-icon-color-white" width="25" version="1.1" xmlns="http://www.w3.org/2000/svg" x="0px" y="0px" viewBox="0 0 512 512" xml:space="preserve">
+                          <svg class="svg-icon-color-white" version="1.1" viewBox="0 0 512 512" width="25"
+                               x="0px" xml:space="preserve" xmlns="http://www.w3.org/2000/svg" y="0px">
                                                     <g>
                                                         <g>
                                                             <g>
@@ -97,7 +99,8 @@
                     <div class="col-lg-4 responsive-column-half">
                       <div class="media media-card align-items-center shadow-none border border-gray p-3">
                         <div class="icon-element icon-element-sm mr-3 bg-3">
-                          <svg class="svg-icon-color-white" viewBox="0 0 24 24" width="25" xmlns="http://www.w3.org/2000/svg">
+                          <svg class="svg-icon-color-white" viewBox="0 0 24 24" width="25"
+                               xmlns="http://www.w3.org/2000/svg">
                             <path
                               d="m11.861 19.066c-.128 0-.256-.049-.354-.146l-6.427-6.427c-.188-.188-.196-.489-.02-.687l4.817-5.396c3.367-3.939 8.85-6.488 13.631-6.407.267.006.482.221.488.488.111 4.784-2.467 10.264-6.416 13.638l-5.387 4.81c-.094.085-.214.127-.332.127zm-5.74-6.946 5.759 5.759 5.043-4.502c3.606-3.082 6.001-7.994 6.075-12.375-4.381.073-9.292 2.468-12.368 6.066z"/>
                             <path
@@ -120,7 +123,7 @@
                 </div>
               </div><!-- end user-panel-main-bar -->
             </div><!-- end tab-pane -->
-            <div class="tab-pane fade" id="user-activity" role="tabpanel" aria-labelledby="user-activity-tab">
+            <div id="user-activity" aria-labelledby="user-activity-tab" class="tab-pane fade" role="tabpanel">
               <div class="user-panel-main-bar">
                 <div class="user-panel mb-40px">
                   <div class="bg-gray p-3 rounded-rounded mb-3">
@@ -140,13 +143,15 @@
                     <div class="stat text-center mr-3 my-1">
                       <small class="d-block lh-15 pb-1">149/100 score</small>
                       <div class="progress progress-slim bg-gray-2">
-                        <div class="progress-bar bg-success" role="progressbar" style="width: 100%" aria-valuenow="100" aria-valuemin="0" aria-valuemax="100"></div>
+                        <div aria-valuemax="100" aria-valuemin="0" aria-valuenow="100" class="progress-bar bg-success"
+                             role="progressbar" style="width: 100%"></div>
                       </div>
                     </div>
                     <div class="stat text-center ml-0 my-1">
                       <small class="d-block lh-15 pb-1">19/20 answers</small>
                       <div class="progress progress-slim bg-gray-2">
-                        <div class="progress-bar bg-success" role="progressbar" style="width: 95%" aria-valuenow="95" aria-valuemin="0" aria-valuemax="100"></div>
+                        <div aria-valuemax="100" aria-valuemin="0" aria-valuenow="95" class="progress-bar bg-success"
+                             role="progressbar" style="width: 95%"></div>
                       </div>
                     </div>
                   </div>
@@ -160,16 +165,18 @@
                       <span class="badge d-block mr-2 badge-md badge-gold" title="Gold"><span class="ball gold"></span> 91</span>
                     </div>
                     <div class="stat flex-grow-1">
-                      <span class="badge d-block mr-2 badge-md badge-gray" title="Silver"><span class="ball silver"></span> 560</span>
+                      <span class="badge d-block mr-2 badge-md badge-gray" title="Silver"><span
+                        class="ball silver"></span> 560</span>
                     </div>
                     <div class="stat flex-grow-1">
-                      <span class="badge d-block badge-md badge-bronze" title="Bronze"><span class="ball"></span> 632</span>
+                      <span class="badge d-block badge-md badge-bronze" title="Bronze"><span
+                        class="ball"></span> 632</span>
                     </div>
                   </div><!-- end badge-stats -->
                   <div class="user-stats d-flex align-items-center">
                     <div class="stat flex-grow-1">
                       <h4 class="fs-15 text-gray pb-2">Newest</h4>
-                      <a href="#" class="badge badge-md badge-dark"><span class="ball silver"></span> Good Answer</a>
+                      <a class="badge badge-md badge-dark" href="#"><span class="ball silver"></span> Good Answer</a>
                     </div>
                     <div class="stat flex-grow-1">
                       <div class="d-flex align-items-center justify-content-between pb-2">
@@ -177,7 +184,8 @@
                         <span class="count fs-14">72/80</span>
                       </div>
                       <div class="progress progress-fat">
-                        <div class="progress-bar bg-gray-2" role="progressbar" style="width: 90%" aria-valuenow="90" aria-valuemin="0" aria-valuemax="100"><span class="text-black">Deputy</span></div>
+                        <div aria-valuemax="100" aria-valuemin="0" aria-valuenow="90" class="progress-bar bg-gray-2"
+                             role="progressbar" style="width: 90%"><span class="text-black">Deputy</span></div>
                       </div>
                     </div>
                   </div>
@@ -225,7 +233,7 @@
                   <div class="bg-gray p-3 rounded-rounded">
                     <div class="filter-option-box w-20">
                       <select class="select-container">
-                        <option value="summary" selected="">Summary</option>
+                        <option selected="" value="summary">Summary</option>
                         <option value="answers">Answers</option>
                         <option value="questions">Questions</option>
                         <option value="tags">Tags</option>
@@ -253,19 +261,22 @@
                     </div>
                     <div class="vertical-list">
                       <div class="item post p-0">
-                        <div class="media media-card media--card align-items-center shadow-none rounded-0 mb-0 bg-transparent">
+                        <div
+                          class="media media-card media--card align-items-center shadow-none rounded-0 mb-0 bg-transparent">
                           <div class="votes answered-accepted">
                             <div class="vote-block" title="Votes">
                               <span class="vote-counts">999k</span>
                             </div>
                           </div>
                           <div class="media-body">
-                            <h5 class="fs-15"><a href="question-details.html">How to make Git “forget” about a file that was tracked but is now in .gitignore?</a></h5>
+                            <h5 class="fs-15"><a href="question-details.html">How to make Git “forget” about a file that
+                              was tracked but is now in .gitignore?</a></h5>
                           </div>
                         </div><!-- end media -->
                       </div><!-- end item -->
                       <div class="item post p-0">
-                        <div class="media media-card media--card align-items-center shadow-none rounded-0 mb-0 bg-transparent">
+                        <div
+                          class="media media-card media--card align-items-center shadow-none rounded-0 mb-0 bg-transparent">
                           <div class="votes answered-accepted">
                             <div class="vote-block" title="Votes">
                               <span class="vote-counts">4714</span>
@@ -277,38 +288,44 @@
                         </div><!-- end media -->
                       </div><!-- end item -->
                       <div class="item post p-0">
-                        <div class="media media-card media--card align-items-center shadow-none rounded-0 mb-0 bg-transparent">
+                        <div
+                          class="media media-card media--card align-items-center shadow-none rounded-0 mb-0 bg-transparent">
                           <div class="votes answered-accepted">
                             <div class="vote-block" title="Votes">
                               <span class="vote-counts">4448</span>
                             </div>
                           </div>
                           <div class="media-body">
-                            <h5 class="fs-15"><a href="question-details.html">Difference between “git add -A” and “git add .”</a></h5>
+                            <h5 class="fs-15"><a href="question-details.html">Difference between “git add -A” and “git
+                              add .”</a></h5>
                           </div>
                         </div><!-- end media -->
                       </div><!-- end item -->
                       <div class="item post p-0">
-                        <div class="media media-card media--card align-items-center shadow-none rounded-0 mb-0 bg-transparent">
+                        <div
+                          class="media media-card media--card align-items-center shadow-none rounded-0 mb-0 bg-transparent">
                           <div class="votes answered-accepted">
                             <div class="vote-block" title="Votes">
                               <span class="vote-counts">3275</span>
                             </div>
                           </div>
                           <div class="media-body">
-                            <h5 class="fs-15"><a href="question-details.html">How to find and restore a deleted file in a Git repository</a></h5>
+                            <h5 class="fs-15"><a href="question-details.html">How to find and restore a deleted file in
+                              a Git repository</a></h5>
                           </div>
                         </div><!-- end media -->
                       </div><!-- end item -->
                       <div class="item post p-0">
-                        <div class="media media-card media--card align-items-center shadow-none rounded-0 mb-0 bg-transparent">
+                        <div
+                          class="media media-card media--card align-items-center shadow-none rounded-0 mb-0 bg-transparent">
                           <div class="votes answered-accepted">
                             <div class="vote-block" title="Votes">
                               <span class="vote-counts">2822</span>
                             </div>
                           </div>
                           <div class="media-body">
-                            <h5 class="fs-15"><a href="question-details.html">Branch from a previous commit using Git</a></h5>
+                            <h5 class="fs-15"><a href="question-details.html">Branch from a previous commit using
+                              Git</a></h5>
                           </div>
                         </div><!-- end media -->
                       </div><!-- end item -->
@@ -316,7 +333,7 @@
                         <nav aria-label="Page navigation example">
                           <ul class="pagination generic-pagination generic--pagination">
                             <li class="page-item">
-                              <a class="page-link" href="#" aria-label="Previous">
+                              <a aria-label="Previous" class="page-link" href="#">
                                 <span aria-hidden="true"><i class="la la-arrow-left"></i></span>
                                 <span class="sr-only">Previous</span>
                               </a>
@@ -326,7 +343,7 @@
                             <li class="page-item"><a class="page-link" href="#">3</a></li>
                             <li class="page-item"><a class="page-link" href="#">4</a></li>
                             <li class="page-item">
-                              <a class="page-link" href="#" aria-label="Next">
+                              <a aria-label="Next" class="page-link" href="#">
                                 <span aria-hidden="true"><i class="la la-arrow-right"></i></span>
                                 <span class="sr-only">Next</span>
                               </a>
@@ -355,62 +372,72 @@
                   <div class="summary-panel">
                     <div class="vertical-list">
                       <div class="item post p-0">
-                        <div class="media media-card media--card align-items-center shadow-none rounded-0 mb-0 bg-transparent">
+                        <div
+                          class="media media-card media--card align-items-center shadow-none rounded-0 mb-0 bg-transparent">
                           <div class="votes answered-accepted">
                             <div class="vote-block" title="Votes">
                               <span class="vote-counts">2653</span>
                             </div>
                           </div>
                           <div class="media-body">
-                            <h5 class="fs-15"><a href="question-details.html">What are the correct version numbers for C#?</a></h5>
+                            <h5 class="fs-15"><a href="question-details.html">What are the correct version numbers for
+                              C#?</a></h5>
                           </div>
                         </div><!-- end media -->
                       </div><!-- end item -->
                       <div class="item post p-0">
-                        <div class="media media-card media--card align-items-center shadow-none rounded-0 mb-0 bg-transparent">
+                        <div
+                          class="media media-card media--card align-items-center shadow-none rounded-0 mb-0 bg-transparent">
                           <div class="votes">
                             <div class="vote-block" title="Votes">
                               <span class="vote-counts">563</span>
                             </div>
                           </div>
                           <div class="media-body">
-                            <h5 class="fs-15"><a href="question-details.html">Curious null-coalescing operator custom implicit conversion behaviour</a></h5>
+                            <h5 class="fs-15"><a href="question-details.html">Curious null-coalescing operator custom
+                              implicit conversion behaviour</a></h5>
                           </div>
                         </div><!-- end media -->
                       </div><!-- end item -->
                       <div class="item post p-0">
-                        <div class="media media-card media--card align-items-center shadow-none rounded-0 mb-0 bg-transparent">
+                        <div
+                          class="media media-card media--card align-items-center shadow-none rounded-0 mb-0 bg-transparent">
                           <div class="votes answered-accepted">
                             <div class="vote-block" title="Votes">
                               <span class="vote-counts">363</span>
                             </div>
                           </div>
                           <div class="media-body">
-                            <h5 class="fs-15"><a href="question-details.html">What's your most controversial programming opinion?</a></h5>
+                            <h5 class="fs-15"><a href="question-details.html">What's your most controversial programming
+                              opinion?</a></h5>
                           </div>
                         </div><!-- end media -->
                       </div><!-- end item -->
                       <div class="item post p-0">
-                        <div class="media media-card media--card align-items-center shadow-none rounded-0 mb-0 bg-transparent">
+                        <div
+                          class="media media-card media--card align-items-center shadow-none rounded-0 mb-0 bg-transparent">
                           <div class="votes answered-accepted">
                             <div class="vote-block" title="Votes">
                               <span class="vote-counts">336</span>
                             </div>
                           </div>
                           <div class="media-body">
-                            <h5 class="fs-15"><a href="question-details.html">Performance surprise with “as” and nullable types</a></h5>
+                            <h5 class="fs-15"><a href="question-details.html">Performance surprise with “as” and
+                              nullable types</a></h5>
                           </div>
                         </div><!-- end media -->
                       </div><!-- end item -->
                       <div class="item post p-0">
-                        <div class="media media-card media--card align-items-center shadow-none rounded-0 mb-0 bg-transparent">
+                        <div
+                          class="media media-card media--card align-items-center shadow-none rounded-0 mb-0 bg-transparent">
                           <div class="votes answered-accepted">
                             <div class="vote-block" title="Votes">
                               <span class="vote-counts">322</span>
                             </div>
                           </div>
                           <div class="media-body">
-                            <h5 class="fs-15"><a href="question-details.html">What's the strangest corner case you've seen in C# or .NET? [closed]</a></h5>
+                            <h5 class="fs-15"><a href="question-details.html">What's the strangest corner case you've
+                              seen in C# or .NET? [closed]</a></h5>
                           </div>
                         </div><!-- end media -->
                       </div><!-- end item -->
@@ -418,7 +445,7 @@
                         <nav aria-label="Page navigation example">
                           <ul class="pagination generic-pagination generic--pagination">
                             <li class="page-item">
-                              <a class="page-link" href="#" aria-label="Previous">
+                              <a aria-label="Previous" class="page-link" href="#">
                                 <span aria-hidden="true"><i class="la la-arrow-left"></i></span>
                                 <span class="sr-only">Previous</span>
                               </a>
@@ -428,7 +455,7 @@
                             <li class="page-item"><a class="page-link" href="#">3</a></li>
                             <li class="page-item"><a class="page-link" href="#">4</a></li>
                             <li class="page-item">
-                              <a class="page-link" href="#" aria-label="Next">
+                              <a aria-label="Next" class="page-link" href="#">
                                 <span aria-hidden="true"><i class="la la-arrow-right"></i></span>
                                 <span class="sr-only">Next</span>
                               </a>
@@ -449,7 +476,7 @@
                       <div class="item tags d-flex align-items-center">
                         <span class="tag-stat mr-2 fs-14">244k</span>
                         <div class="flex-grow-1">
-                          <a href="#" class="tag-link tag-link-md tag-link-blue mb-0 lh-20">c#</a>
+                          <a class="tag-link tag-link-md tag-link-blue mb-0 lh-20" href="#">c#</a>
                         </div>
                         <span class="item-multiplier fs-14">
                                                 <span>×</span>
@@ -459,7 +486,7 @@
                       <div class="item tags d-flex align-items-center">
                         <span class="tag-stat mr-2 fs-14">146k</span>
                         <div class="flex-grow-1">
-                          <a href="#" class="tag-link tag-link-md tag-link-blue mb-0 lh-20">java</a>
+                          <a class="tag-link tag-link-md tag-link-blue mb-0 lh-20" href="#">java</a>
                         </div>
                         <span class="item-multiplier fs-14">
                                                 <span>×</span>
@@ -469,7 +496,7 @@
                       <div class="item tags d-flex align-items-center">
                         <span class="tag-stat mr-2 fs-14">89k</span>
                         <div class="flex-grow-1">
-                          <a href="#" class="tag-link tag-link-md tag-link-blue mb-0 lh-20">.net</a>
+                          <a class="tag-link tag-link-md tag-link-blue mb-0 lh-20" href="#">.net</a>
                         </div>
                         <span class="item-multiplier fs-14">
                                                 <span>×</span>
@@ -479,7 +506,7 @@
                       <div class="item tags d-flex align-items-center">
                         <span class="tag-stat mr-2 fs-14">34k</span>
                         <div class="flex-grow-1">
-                          <a href="#" class="tag-link tag-link-md tag-link-blue mb-0 lh-20">linq</a>
+                          <a class="tag-link tag-link-md tag-link-blue mb-0 lh-20" href="#">linq</a>
                         </div>
                         <span class="item-multiplier fs-14">
                                                 <span>×</span>
@@ -489,7 +516,7 @@
                       <div class="item tags d-flex align-items-center">
                         <span class="tag-stat mr-2 fs-14">23k</span>
                         <div class="flex-grow-1">
-                          <a href="#" class="tag-link tag-link-md tag-link-blue mb-0 lh-20">string</a>
+                          <a class="tag-link tag-link-md tag-link-blue mb-0 lh-20" href="#">string</a>
                         </div>
                         <span class="item-multiplier fs-14">
                                                 <span>×</span>
@@ -500,7 +527,7 @@
                         <nav aria-label="Page navigation example">
                           <ul class="pagination generic-pagination generic--pagination">
                             <li class="page-item">
-                              <a class="page-link" href="#" aria-label="Previous">
+                              <a aria-label="Previous" class="page-link" href="#">
                                 <span aria-hidden="true"><i class="la la-arrow-left"></i></span>
                                 <span class="sr-only">Previous</span>
                               </a>
@@ -510,7 +537,7 @@
                             <li class="page-item"><a class="page-link" href="#">3</a></li>
                             <li class="page-item"><a class="page-link" href="#">4</a></li>
                             <li class="page-item">
-                              <a class="page-link" href="#" aria-label="Next">
+                              <a aria-label="Next" class="page-link" href="#">
                                 <span aria-hidden="true"><i class="la la-arrow-right"></i></span>
                                 <span class="sr-only">Next</span>
                               </a>
@@ -539,35 +566,40 @@
                   <div class="summary-panel">
                     <div class="vertical-list">
                       <div class="item">
-                        <a href="#" class="badge badge-md badge-dark d-inline-flex align-items-center mr-1"><span class="ball silver"></span> Good Answer</a>
+                        <a class="badge badge-md badge-dark d-inline-flex align-items-center mr-1" href="#"><span
+                          class="ball silver"></span> Good Answer</a>
                         <span class="item-multiplier fs-14 fw-medium">
                                                 <span>×</span>
                                                 <span>4142</span>
                                             </span>
                       </div><!-- item -->
                       <div class="item">
-                        <a href="#" class="badge badge-md badge-dark d-inline-flex align-items-center mr-1"><span class="ball"></span> Nice Answer</a>
+                        <a class="badge badge-md badge-dark d-inline-flex align-items-center mr-1" href="#"><span
+                          class="ball"></span> Nice Answer</a>
                         <span class="item-multiplier fs-14 fw-medium">
                                                 <span>×</span>
                                                 <span>586</span>
                                             </span>
                       </div><!-- item -->
                       <div class="item">
-                        <a href="#" class="badge badge-md badge-dark d-inline-flex align-items-center mr-1"><span class="ball gold"></span> Great Answer</a>
+                        <a class="badge badge-md badge-dark d-inline-flex align-items-center mr-1" href="#"><span
+                          class="ball gold"></span> Great Answer</a>
                         <span class="item-multiplier fs-14 fw-medium">
                                                 <span>×</span>
                                                 <span>1310</span>
                                             </span>
                       </div><!-- item -->
                       <div class="item">
-                        <a href="#" class="badge badge-md badge-dark d-inline-flex align-items-center mr-1"><span class="ball silver"></span> Enlightened</a>
+                        <a class="badge badge-md badge-dark d-inline-flex align-items-center mr-1" href="#"><span
+                          class="ball silver"></span> Enlightened</a>
                         <span class="item-multiplier fs-14 fw-medium">
                                                 <span>×</span>
                                                 <span>2863</span>
                                             </span>
                       </div><!-- item -->
                       <div class="item">
-                        <a href="#" class="badge badge-md badge-dark d-inline-flex align-items-center mr-1"><span class="ball silver"></span> Guru</a>
+                        <a class="badge badge-md badge-dark d-inline-flex align-items-center mr-1" href="#"><span
+                          class="ball silver"></span> Guru</a>
                         <span class="item-multiplier fs-14 fw-medium">
                                                 <span>×</span>
                                                 <span>131</span>
@@ -577,7 +609,7 @@
                         <nav aria-label="Page navigation example">
                           <ul class="pagination generic-pagination generic--pagination">
                             <li class="page-item">
-                              <a class="page-link" href="#" aria-label="Previous">
+                              <a aria-label="Previous" class="page-link" href="#">
                                 <span aria-hidden="true"><i class="la la-arrow-left"></i></span>
                                 <span class="sr-only">Previous</span>
                               </a>
@@ -587,7 +619,7 @@
                             <li class="page-item"><a class="page-link" href="#">3</a></li>
                             <li class="page-item"><a class="page-link" href="#">4</a></li>
                             <li class="page-item">
-                              <a class="page-link" href="#" aria-label="Next">
+                              <a aria-label="Next" class="page-link" href="#">
                                 <span aria-hidden="true"><i class="la la-arrow-right"></i></span>
                                 <span class="sr-only">Next</span>
                               </a>
@@ -618,10 +650,12 @@
                   <div class="summary-panel">
                     <div class="vertical-list">
                       <div class="item post p-0">
-                        <div class="media media-card media--card align-items-center shadow-none rounded-0 mb-0 bg-transparent">
-                          <svg aria-hidden="true" class="svg-icon ml-3 icon-question" width="18" height="18" viewBox="0 0 18 18">
-                            <path fill="#7d848c"
-                                  d="M4 14l-3 3V3c0-1.1.9-2 2-2h12a2 2 0 012 2v9a2 2 0 01-2 2H4zm7.75-3.97c.32-.37.55-.75.7-1.15.18-.51.28-1.11.28-1.79 0-1.29-.35-2.29-1.03-3a3.66 3.66 0 00-2.78-1.07 3.7 3.7 0 00-2.8 1.07c-.73.82-1.1 1.9-1.03 3 0 1.29.35 2.29 1.03 3a3.76 3.76 0 002.85 1.07c.62 0 1.2-.11 1.71-.34.65.44 1 .68 1.06.7.23.13.46.23.7.3l.59-1.13a5.2 5.2 0 01-1.28-.66zm-1.27-.9a5.4 5.4 0 00-1.5-.8l-.45.9c.33.12.66.29.98.5-.2.07-.42.11-.65.11-.61 0-1.12-.23-1.52-.68-.4-.46-.6-1.15-.6-2.07 0-.9.2-1.58.6-2.04a2 2 0 011.57-.67 2 2 0 011.58.67c.4.45.6 1.13.6 2.04 0 .44-.05.83-.16 1.17-.1.34-.25.63-.45.87z"></path>
+                        <div
+                          class="media media-card media--card align-items-center shadow-none rounded-0 mb-0 bg-transparent">
+                          <svg aria-hidden="true" class="svg-icon ml-3 icon-question" height="18" viewBox="0 0 18 18"
+                               width="18">
+                            <path d="M4 14l-3 3V3c0-1.1.9-2 2-2h12a2 2 0 012 2v9a2 2 0 01-2 2H4zm7.75-3.97c.32-.37.55-.75.7-1.15.18-.51.28-1.11.28-1.79 0-1.29-.35-2.29-1.03-3a3.66 3.66 0 00-2.78-1.07 3.7 3.7 0 00-2.8 1.07c-.73.82-1.1 1.9-1.03 3 0 1.29.35 2.29 1.03 3a3.76 3.76 0 002.85 1.07c.62 0 1.2-.11 1.71-.34.65.44 1 .68 1.06.7.23.13.46.23.7.3l.59-1.13a5.2 5.2 0 01-1.28-.66zm-1.27-.9a5.4 5.4 0 00-1.5-.8l-.45.9c.33.12.66.29.98.5-.2.07-.42.11-.65.11-.61 0-1.12-.23-1.52-.68-.4-.46-.6-1.15-.6-2.07 0-.9.2-1.58.6-2.04a2 2 0 011.57-.67 2 2 0 011.58.67c.4.45.6 1.13.6 2.04 0 .44-.05.83-.16 1.17-.1.34-.25.63-.45.87z"
+                                  fill="#7d848c"></path>
                           </svg>
                           <div class="votes answered-accepted">
                             <div class="vote-block" title="Votes">
@@ -629,14 +663,18 @@
                             </div>
                           </div>
                           <div class="media-body">
-                            <h5 class="fs-15"><a href="question-details.html">git: undo all working dir changes including new files</a></h5>
+                            <h5 class="fs-15"><a href="question-details.html">git: undo all working dir changes
+                              including new files</a></h5>
                           </div>
                         </div><!-- end media -->
                       </div><!-- end item -->
                       <div class="item post p-0">
-                        <div class="media media-card media--card align-items-center shadow-none rounded-0 mb-0 bg-transparent">
-                          <svg aria-hidden="true" class="svg-icon ml-3 icon-answer" width="18" height="18" viewBox="0 0 18 18">
-                            <path fill="#7d848c" d="M14 14H3a2 2 0 01-2-2V3c0-1.1.9-2 2-2h12a2 2 0 012 2v14l-3-3zm-1.02-3L9.82 3H8.14l-3.06 8h1.68l.65-1.79h3.15l.69 1.79h1.73zm-2.93-3.12H7.9l1.06-2.92 1.09 2.92z"></path>
+                        <div
+                          class="media media-card media--card align-items-center shadow-none rounded-0 mb-0 bg-transparent">
+                          <svg aria-hidden="true" class="svg-icon ml-3 icon-answer" height="18" viewBox="0 0 18 18"
+                               width="18">
+                            <path d="M14 14H3a2 2 0 01-2-2V3c0-1.1.9-2 2-2h12a2 2 0 012 2v14l-3-3zm-1.02-3L9.82 3H8.14l-3.06 8h1.68l.65-1.79h3.15l.69 1.79h1.73zm-2.93-3.12H7.9l1.06-2.92 1.09 2.92z"
+                                  fill="#7d848c"></path>
                           </svg>
                           <div class="votes">
                             <div class="vote-block" title="Votes">
@@ -644,14 +682,18 @@
                             </div>
                           </div>
                           <div class="media-body">
-                            <h5 class="fs-15"><a href="question-details.html">How to revert uncommitted changes including files and folders?</a></h5>
+                            <h5 class="fs-15"><a href="question-details.html">How to revert uncommitted changes
+                              including files and folders?</a></h5>
                           </div>
                         </div><!-- end media -->
                       </div><!-- end item -->
                       <div class="item post p-0">
-                        <div class="media media-card media--card align-items-center shadow-none rounded-0 mb-0 bg-transparent">
-                          <svg aria-hidden="true" class="svg-icon ml-3 icon-answer" width="18" height="18" viewBox="0 0 18 18">
-                            <path fill="#7d848c" d="M14 14H3a2 2 0 01-2-2V3c0-1.1.9-2 2-2h12a2 2 0 012 2v14l-3-3zm-1.02-3L9.82 3H8.14l-3.06 8h1.68l.65-1.79h3.15l.69 1.79h1.73zm-2.93-3.12H7.9l1.06-2.92 1.09 2.92z"></path>
+                        <div
+                          class="media media-card media--card align-items-center shadow-none rounded-0 mb-0 bg-transparent">
+                          <svg aria-hidden="true" class="svg-icon ml-3 icon-answer" height="18" viewBox="0 0 18 18"
+                               width="18">
+                            <path d="M14 14H3a2 2 0 01-2-2V3c0-1.1.9-2 2-2h12a2 2 0 012 2v14l-3-3zm-1.02-3L9.82 3H8.14l-3.06 8h1.68l.65-1.79h3.15l.69 1.79h1.73zm-2.93-3.12H7.9l1.06-2.92 1.09 2.92z"
+                                  fill="#7d848c"></path>
                           </svg>
                           <div class="votes answered-accepted">
                             <div class="vote-block" title="Votes">
@@ -659,14 +701,18 @@
                             </div>
                           </div>
                           <div class="media-body">
-                            <h5 class="fs-15"><a href="question-details.html">Detected package downgrade warning (dotnet core, vs 2017)</a></h5>
+                            <h5 class="fs-15"><a href="question-details.html">Detected package downgrade warning (dotnet
+                              core, vs 2017)</a></h5>
                           </div>
                         </div><!-- end media -->
                       </div><!-- end item -->
                       <div class="item post p-0">
-                        <div class="media media-card media--card align-items-center shadow-none rounded-0 mb-0 bg-transparent">
-                          <svg aria-hidden="true" class="svg-icon ml-3 icon-answer" width="18" height="18" viewBox="0 0 18 18">
-                            <path fill="#7d848c" d="M14 14H3a2 2 0 01-2-2V3c0-1.1.9-2 2-2h12a2 2 0 012 2v14l-3-3zm-1.02-3L9.82 3H8.14l-3.06 8h1.68l.65-1.79h3.15l.69 1.79h1.73zm-2.93-3.12H7.9l1.06-2.92 1.09 2.92z"></path>
+                        <div
+                          class="media media-card media--card align-items-center shadow-none rounded-0 mb-0 bg-transparent">
+                          <svg aria-hidden="true" class="svg-icon ml-3 icon-answer" height="18" viewBox="0 0 18 18"
+                               width="18">
+                            <path d="M14 14H3a2 2 0 01-2-2V3c0-1.1.9-2 2-2h12a2 2 0 012 2v14l-3-3zm-1.02-3L9.82 3H8.14l-3.06 8h1.68l.65-1.79h3.15l.69 1.79h1.73zm-2.93-3.12H7.9l1.06-2.92 1.09 2.92z"
+                                  fill="#7d848c"></path>
                           </svg>
                           <div class="votes answered-accepted">
                             <div class="vote-block" title="Votes">
@@ -674,15 +720,18 @@
                             </div>
                           </div>
                           <div class="media-body">
-                            <h5 class="fs-15"><a href="question-details.html">What is the difference between a variable, object, and reference? [duplicate]</a></h5>
+                            <h5 class="fs-15"><a href="question-details.html">What is the difference between a variable,
+                              object, and reference? [duplicate]</a></h5>
                           </div>
                         </div><!-- end media -->
                       </div><!-- end item -->
                       <div class="item post p-0">
-                        <div class="media media-card media--card align-items-center shadow-none rounded-0 mb-0 bg-transparent">
-                          <svg aria-hidden="true" class="svg-icon ml-3 icon-question" width="18" height="18" viewBox="0 0 18 18">
-                            <path fill="#7d848c"
-                                  d="M4 14l-3 3V3c0-1.1.9-2 2-2h12a2 2 0 012 2v9a2 2 0 01-2 2H4zm7.75-3.97c.32-.37.55-.75.7-1.15.18-.51.28-1.11.28-1.79 0-1.29-.35-2.29-1.03-3a3.66 3.66 0 00-2.78-1.07 3.7 3.7 0 00-2.8 1.07c-.73.82-1.1 1.9-1.03 3 0 1.29.35 2.29 1.03 3a3.76 3.76 0 002.85 1.07c.62 0 1.2-.11 1.71-.34.65.44 1 .68 1.06.7.23.13.46.23.7.3l.59-1.13a5.2 5.2 0 01-1.28-.66zm-1.27-.9a5.4 5.4 0 00-1.5-.8l-.45.9c.33.12.66.29.98.5-.2.07-.42.11-.65.11-.61 0-1.12-.23-1.52-.68-.4-.46-.6-1.15-.6-2.07 0-.9.2-1.58.6-2.04a2 2 0 011.57-.67 2 2 0 011.58.67c.4.45.6 1.13.6 2.04 0 .44-.05.83-.16 1.17-.1.34-.25.63-.45.87z"></path>
+                        <div
+                          class="media media-card media--card align-items-center shadow-none rounded-0 mb-0 bg-transparent">
+                          <svg aria-hidden="true" class="svg-icon ml-3 icon-question" height="18" viewBox="0 0 18 18"
+                               width="18">
+                            <path d="M4 14l-3 3V3c0-1.1.9-2 2-2h12a2 2 0 012 2v9a2 2 0 01-2 2H4zm7.75-3.97c.32-.37.55-.75.7-1.15.18-.51.28-1.11.28-1.79 0-1.29-.35-2.29-1.03-3a3.66 3.66 0 00-2.78-1.07 3.7 3.7 0 00-2.8 1.07c-.73.82-1.1 1.9-1.03 3 0 1.29.35 2.29 1.03 3a3.76 3.76 0 002.85 1.07c.62 0 1.2-.11 1.71-.34.65.44 1 .68 1.06.7.23.13.46.23.7.3l.59-1.13a5.2 5.2 0 01-1.28-.66zm-1.27-.9a5.4 5.4 0 00-1.5-.8l-.45.9c.33.12.66.29.98.5-.2.07-.42.11-.65.11-.61 0-1.12-.23-1.52-.68-.4-.46-.6-1.15-.6-2.07 0-.9.2-1.58.6-2.04a2 2 0 011.57-.67 2 2 0 011.58.67c.4.45.6 1.13.6 2.04 0 .44-.05.83-.16 1.17-.1.34-.25.63-.45.87z"
+                                  fill="#7d848c"></path>
                           </svg>
                           <div class="votes answered-accepted">
                             <div class="vote-block" title="Votes">
@@ -690,7 +739,8 @@
                             </div>
                           </div>
                           <div class="media-body">
-                            <h5 class="fs-15"><a href="question-details.html">I've found a bug in the JIT/CLR - now how do I debug or reproduce it?</a></h5>
+                            <h5 class="fs-15"><a href="question-details.html">I've found a bug in the JIT/CLR - now how
+                              do I debug or reproduce it?</a></h5>
                           </div>
                         </div><!-- end media -->
                       </div><!-- end item -->
@@ -698,7 +748,7 @@
                         <nav aria-label="Page navigation example">
                           <ul class="pagination generic-pagination generic--pagination">
                             <li class="page-item">
-                              <a class="page-link" href="#" aria-label="Previous">
+                              <a aria-label="Previous" class="page-link" href="#">
                                 <span aria-hidden="true"><i class="la la-arrow-left"></i></span>
                                 <span class="sr-only">Previous</span>
                               </a>
@@ -708,7 +758,7 @@
                             <li class="page-item"><a class="page-link" href="#">3</a></li>
                             <li class="page-item"><a class="page-link" href="#">4</a></li>
                             <li class="page-item">
-                              <a class="page-link" href="#" aria-label="Next">
+                              <a aria-label="Next" class="page-link" href="#">
                                 <span aria-hidden="true"><i class="la la-arrow-right"></i></span>
                                 <span class="sr-only">Next</span>
                               </a>
@@ -739,62 +789,72 @@
                   <div class="summary-panel">
                     <div class="vertical-list">
                       <div class="item post p-0">
-                        <div class="media media-card media--card align-items-center shadow-none rounded-0 mb-0 bg-transparent">
+                        <div
+                          class="media media-card media--card align-items-center shadow-none rounded-0 mb-0 bg-transparent">
                           <div class="votes answered-accepted">
                             <div class="vote-block" title="Votes">
                               <span class="vote-counts">1203</span>
                             </div>
                           </div>
                           <div class="media-body">
-                            <h5 class="fs-15"><a href="question-details.html">git: undo all working dir changes including new files</a></h5>
+                            <h5 class="fs-15"><a href="question-details.html">git: undo all working dir changes
+                              including new files</a></h5>
                           </div>
                         </div><!-- end media -->
                       </div><!-- end item -->
                       <div class="item post p-0">
-                        <div class="media media-card media--card align-items-center shadow-none rounded-0 mb-0 bg-transparent">
+                        <div
+                          class="media media-card media--card align-items-center shadow-none rounded-0 mb-0 bg-transparent">
                           <div class="votes">
                             <div class="vote-block" title="Votes">
                               <span class="vote-counts">1117</span>
                             </div>
                           </div>
                           <div class="media-body">
-                            <h5 class="fs-15"><a href="question-details.html">How to revert uncommitted changes including files and folders?</a></h5>
+                            <h5 class="fs-15"><a href="question-details.html">How to revert uncommitted changes
+                              including files and folders?</a></h5>
                           </div>
                         </div><!-- end media -->
                       </div><!-- end item -->
                       <div class="item post p-0">
-                        <div class="media media-card media--card align-items-center shadow-none rounded-0 mb-0 bg-transparent">
+                        <div
+                          class="media media-card media--card align-items-center shadow-none rounded-0 mb-0 bg-transparent">
                           <div class="votes answered-accepted">
                             <div class="vote-block" title="Votes">
                               <span class="vote-counts">76</span>
                             </div>
                           </div>
                           <div class="media-body">
-                            <h5 class="fs-15"><a href="question-details.html">Detected package downgrade warning (dotnet core, vs 2017)</a></h5>
+                            <h5 class="fs-15"><a href="question-details.html">Detected package downgrade warning (dotnet
+                              core, vs 2017)</a></h5>
                           </div>
                         </div><!-- end media -->
                       </div><!-- end item -->
                       <div class="item post p-0">
-                        <div class="media media-card media--card align-items-center shadow-none rounded-0 mb-0 bg-transparent">
+                        <div
+                          class="media media-card media--card align-items-center shadow-none rounded-0 mb-0 bg-transparent">
                           <div class="votes answered-accepted">
                             <div class="vote-block" title="Votes">
                               <span class="vote-counts">73</span>
                             </div>
                           </div>
                           <div class="media-body">
-                            <h5 class="fs-15"><a href="question-details.html">What is the difference between a variable, object, and reference? [duplicate]</a></h5>
+                            <h5 class="fs-15"><a href="question-details.html">What is the difference between a variable,
+                              object, and reference? [duplicate]</a></h5>
                           </div>
                         </div><!-- end media -->
                       </div><!-- end item -->
                       <div class="item post p-0">
-                        <div class="media media-card media--card align-items-center shadow-none rounded-0 mb-0 bg-transparent">
+                        <div
+                          class="media media-card media--card align-items-center shadow-none rounded-0 mb-0 bg-transparent">
                           <div class="votes answered-accepted">
                             <div class="vote-block" title="Votes">
                               <span class="vote-counts">24</span>
                             </div>
                           </div>
                           <div class="media-body">
-                            <h5 class="fs-15"><a href="question-details.html">I've found a bug in the JIT/CLR - now how do I debug or reproduce it?</a></h5>
+                            <h5 class="fs-15"><a href="question-details.html">I've found a bug in the JIT/CLR - now how
+                              do I debug or reproduce it?</a></h5>
                           </div>
                         </div><!-- end media -->
                       </div><!-- end item -->
@@ -802,7 +862,7 @@
                         <nav aria-label="Page navigation example">
                           <ul class="pagination generic-pagination generic--pagination">
                             <li class="page-item">
-                              <a class="page-link" href="#" aria-label="Previous">
+                              <a aria-label="Previous" class="page-link" href="#">
                                 <span aria-hidden="true"><i class="la la-arrow-left"></i></span>
                                 <span class="sr-only">Previous</span>
                               </a>
@@ -812,7 +872,7 @@
                             <li class="page-item"><a class="page-link" href="#">3</a></li>
                             <li class="page-item"><a class="page-link" href="#">4</a></li>
                             <li class="page-item">
-                              <a class="page-link" href="#" aria-label="Next">
+                              <a aria-label="Next" class="page-link" href="#">
                                 <span aria-hidden="true"><i class="la la-arrow-right"></i></span>
                                 <span class="sr-only">Next</span>
                               </a>
@@ -841,7 +901,8 @@
                   <div class="summary-panel">
                     <div class="vertical-list">
                       <div class="item p-0">
-                        <div class="media media-card media--card align-items-center shadow-none rounded-0 mb-0 bg-transparent">
+                        <div
+                          class="media media-card media--card align-items-center shadow-none rounded-0 mb-0 bg-transparent">
                           <div class="votes">
                             <div class="vote-block d-flex align-items-center justify-content-between" title="Votes">
                               <span class="vote-counts">6475</span>
@@ -853,21 +914,24 @@
                             </div>
                           </div>
                           <div class="media-body">
-                            <h5><a href="question-details.html" class="d-flex align-items-center"><span class="badge bg-12 mr-2 text-white">+100</span> How to make Git “forget” about a file that was tracked but is now in
+                            <h5><a class="d-flex align-items-center" href="question-details.html"><span
+                              class="badge bg-12 mr-2 text-white">+100</span> How to make Git “forget” about a file that
+                              was tracked but is now in
                               .gitignore?</a></h5>
                             <small class="meta">
                               <span class="pr-1">yesterday</span>
-                              <a href="#" class="author">edublog</a>
+                              <a class="author" href="#">edublog</a>
                             </small>
                             <div class="tags">
-                              <a href="#" class="tag-link">git</a>
-                              <a href="#" class="tag-link">gitignore</a>
+                              <a class="tag-link" href="#">git</a>
+                              <a class="tag-link" href="#">gitignore</a>
                             </div>
                           </div>
                         </div><!-- end media -->
                       </div><!-- end item -->
                       <div class="item p-0">
-                        <div class="media media-card media--card align-items-center shadow-none rounded-0 mb-0 bg-transparent">
+                        <div
+                          class="media media-card media--card align-items-center shadow-none rounded-0 mb-0 bg-transparent">
                           <div class="votes answered-accepted">
                             <div class="vote-block d-flex align-items-center justify-content-between" title="Votes">
                               <span class="vote-counts">4711</span>
@@ -879,21 +943,24 @@
                             </div>
                           </div>
                           <div class="media-body">
-                            <h5><a href="question-details.html" class="d-flex align-items-center"><span class="badge bg-12 mr-2 text-white">+500</span> Catching errors being thrown within module</a></h5>
+                            <h5><a class="d-flex align-items-center" href="question-details.html"><span
+                              class="badge bg-12 mr-2 text-white">+500</span> Catching errors being thrown within module</a>
+                            </h5>
                             <small class="meta">
                               <span class="pr-1">1 hour ago</span>
-                              <a href="#" class="author">edublog</a>
+                              <a class="author" href="#">edublog</a>
                             </small>
                             <div class="tags">
-                              <a href="#" class="tag-link">python</a>
-                              <a href="#" class="tag-link">error-handling</a>
-                              <a href="#" class="tag-link">gevent</a>
+                              <a class="tag-link" href="#">python</a>
+                              <a class="tag-link" href="#">error-handling</a>
+                              <a class="tag-link" href="#">gevent</a>
                             </div>
                           </div>
                         </div><!-- end media -->
                       </div><!-- end item -->
                       <div class="item p-0">
-                        <div class="media media-card media--card align-items-center shadow-none rounded-0 mb-0 bg-transparent">
+                        <div
+                          class="media media-card media--card align-items-center shadow-none rounded-0 mb-0 bg-transparent">
                           <div class="votes answered-accepted">
                             <div class="vote-block d-flex align-items-center justify-content-between" title="Votes">
                               <span class="vote-counts">4448</span>
@@ -905,21 +972,23 @@
                             </div>
                           </div>
                           <div class="media-body">
-                            <h5><a href="question-details.html" class="d-flex align-items-center"><span class="badge bg-12 mr-2 text-white">+200</span> Alien Dictionary Python</a></h5>
+                            <h5><a class="d-flex align-items-center" href="question-details.html"><span
+                              class="badge bg-12 mr-2 text-white">+200</span> Alien Dictionary Python</a></h5>
                             <small class="meta">
                               <span class="pr-1">2 days ago</span>
-                              <a href="#" class="author">edublog</a>
+                              <a class="author" href="#">edublog</a>
                             </small>
                             <div class="tags">
-                              <a href="#" class="tag-link">python</a>
-                              <a href="#" class="tag-link">algorithm</a>
-                              <a href="#" class="tag-link">graph</a>
+                              <a class="tag-link" href="#">python</a>
+                              <a class="tag-link" href="#">algorithm</a>
+                              <a class="tag-link" href="#">graph</a>
                             </div>
                           </div>
                         </div><!-- end media -->
                       </div><!-- end item -->
                       <div class="item p-0">
-                        <div class="media media-card media--card align-items-center shadow-none rounded-0 mb-0 bg-transparent">
+                        <div
+                          class="media media-card media--card align-items-center shadow-none rounded-0 mb-0 bg-transparent">
                           <div class="votes">
                             <div class="vote-block d-flex align-items-center justify-content-between" title="Votes">
                               <span class="vote-counts">3274</span>
@@ -931,22 +1000,25 @@
                             </div>
                           </div>
                           <div class="media-body">
-                            <h5><a href="question-details.html" class="d-flex align-items-center"><span class="badge bg-12 mr-2 text-white">+50</span> How to parse JS code into one-operation-per-line with fewest temp
+                            <h5><a class="d-flex align-items-center" href="question-details.html"><span
+                              class="badge bg-12 mr-2 text-white">+50</span> How to parse JS code into
+                              one-operation-per-line with fewest temp
                               variables?</a></h5>
                             <small class="meta">
                               <span class="pr-1">May 12 '20</span>
-                              <a href="#" class="author">edublog</a>
+                              <a class="author" href="#">edublog</a>
                             </small>
                             <div class="tags">
-                              <a href="#" class="tag-link">javascript</a>
-                              <a href="#" class="tag-link">compilation</a>
-                              <a href="#" class="tag-link">register-allocation</a>
+                              <a class="tag-link" href="#">javascript</a>
+                              <a class="tag-link" href="#">compilation</a>
+                              <a class="tag-link" href="#">register-allocation</a>
                             </div>
                           </div>
                         </div><!-- end media -->
                       </div><!-- end item -->
                       <div class="item p-0">
-                        <div class="media media-card media--card align-items-center shadow-none rounded-0 mb-0 bg-transparent">
+                        <div
+                          class="media media-card media--card align-items-center shadow-none rounded-0 mb-0 bg-transparent">
                           <div class="votes">
                             <div class="vote-block d-flex align-items-center justify-content-between" title="Votes">
                               <span class="vote-counts">2822</span>
@@ -958,16 +1030,18 @@
                             </div>
                           </div>
                           <div class="media-body">
-                            <h5><a href="question-details.html" class="d-flex align-items-center"><span class="badge bg-12 mr-2 text-white">+50</span> vue 3 Server Side Rendering with Vuex and Router</a></h5>
+                            <h5><a class="d-flex align-items-center" href="question-details.html"><span
+                              class="badge bg-12 mr-2 text-white">+50</span> vue 3 Server Side Rendering with Vuex and
+                              Router</a></h5>
                             <small class="meta">
                               <span class="pr-1">May 12 '20</span>
-                              <a href="#" class="author">edublog</a>
+                              <a class="author" href="#">edublog</a>
                             </small>
                             <div class="tags">
-                              <a href="#" class="tag-link">vue.js</a>
-                              <a href="#" class="tag-link">vuex</a>
-                              <a href="#" class="tag-link">vuejs3</a>
-                              <a href="#" class="tag-link">router</a>
+                              <a class="tag-link" href="#">vue.js</a>
+                              <a class="tag-link" href="#">vuex</a>
+                              <a class="tag-link" href="#">vuejs3</a>
+                              <a class="tag-link" href="#">router</a>
                             </div>
                           </div>
                         </div><!-- end media -->
@@ -976,7 +1050,7 @@
                         <nav aria-label="Page navigation example">
                           <ul class="pagination generic-pagination generic--pagination">
                             <li class="page-item">
-                              <a class="page-link" href="#" aria-label="Previous">
+                              <a aria-label="Previous" class="page-link" href="#">
                                 <span aria-hidden="true"><i class="la la-arrow-left"></i></span>
                                 <span class="sr-only">Previous</span>
                               </a>
@@ -986,7 +1060,7 @@
                             <li class="page-item"><a class="page-link" href="#">3</a></li>
                             <li class="page-item"><a class="page-link" href="#">4</a></li>
                             <li class="page-item">
-                              <a class="page-link" href="#" aria-label="Next">
+                              <a aria-label="Next" class="page-link" href="#">
                                 <span aria-hidden="true"><i class="la la-arrow-right"></i></span>
                                 <span class="sr-only">Next</span>
                               </a>
@@ -1005,8 +1079,11 @@
                   <div class="summary-panel">
                     <div class="vertical-list">
                       <div class="item">
-                        <p class="fs-14">Of the votes cast, <span class="text-black">18,808</span> were upvotes and <span class="text-black">42</span> were downvotes. <span class="text-black">Arden Smith</span> voted on questions
-                          <span class="text-black">7,553</span> times and <span class="text-black">11,297</span> times on answers.</p>
+                        <p class="fs-14">Of the votes cast, <span class="text-black">18,808</span> were upvotes and
+                          <span class="text-black">42</span> were downvotes. <span class="text-black">Arden Smith</span>
+                          voted on questions
+                          <span class="text-black">7,553</span> times and <span class="text-black">11,297</span> times
+                          on answers.</p>
                       </div><!-- end item -->
                       <div class="item">
                         <p class="fs-14"><span class="text-black">50</span> votes in the last month</p>
@@ -1056,7 +1133,8 @@
                     </div><!-- end icon-box -->
                   </div><!-- end col-lg-6 -->
                   <div class="col-lg-12 pt-3">
-                    <p class="fs-14">To get answer of question <a href="signup.html" class="text-color hover-underline">Join<i class="la la-arrow-right ml-1"></i></a></p>
+                    <p class="fs-14">To get answer of question <a class="text-color hover-underline" href="signup.html">Join<i
+                      class="la la-arrow-right ml-1"></i></a></p>
                   </div>
                 </div><!-- end row -->
               </div>
@@ -1072,27 +1150,29 @@
                       <small class="meta">
                         <span class="pr-1">2 mins ago</span>
                         <span class="pr-1">. by</span>
-                        <a href="#" class="author">Sudhir Kumbhare</a>
+                        <a class="author" href="#">Sudhir Kumbhare</a>
                       </small>
                     </div>
                   </div><!-- end media -->
                   <div class="media media-card media--card media--card-2">
                     <div class="media-body">
-                      <h5><a href="question-details.html">Is it true while finding Time Complexity of the algorithm [closed]</a></h5>
+                      <h5><a href="question-details.html">Is it true while finding Time Complexity of the algorithm
+                        [closed]</a></h5>
                       <small class="meta">
                         <span class="pr-1">48 mins ago</span>
                         <span class="pr-1">. by</span>
-                        <a href="#" class="author">wimax</a>
+                        <a class="author" href="#">wimax</a>
                       </small>
                     </div>
                   </div><!-- end media -->
                   <div class="media media-card media--card media--card-2">
                     <div class="media-body">
-                      <h5><a href="question-details.html">image picker and store them into firebase with flutter</a></h5>
+                      <h5><a href="question-details.html">image picker and store them into firebase with flutter</a>
+                      </h5>
                       <small class="meta">
                         <span class="pr-1">1 hour ago</span>
                         <span class="pr-1">. by</span>
-                        <a href="#" class="author">Antonin gavrel</a>
+                        <a class="author" href="#">Antonin gavrel</a>
                       </small>
                     </div>
                   </div><!-- end media -->
@@ -1105,85 +1185,86 @@
                 <div class="divider"><span></span></div>
                 <div class="tags pt-4">
                   <div class="tag-item">
-                    <a href="#" class="tag-link tag-link-md">analytics</a>
+                    <a class="tag-link tag-link-md" href="#">analytics</a>
                     <span class="item-multiplier fs-13">
                                     <span>×</span>
                                     <span>32924</span>
                                 </span>
                   </div><!-- end tag-item -->
                   <div class="tag-item">
-                    <a href="#" class="tag-link tag-link-md">computer</a>
+                    <a class="tag-link tag-link-md" href="#">computer</a>
                     <span class="item-multiplier fs-13">
                                     <span>×</span>
                                     <span>32924</span>
                                 </span>
                   </div><!-- end tag-item -->
                   <div class="tag-item">
-                    <a href="#" class="tag-link tag-link-md">python</a>
+                    <a class="tag-link tag-link-md" href="#">python</a>
                     <span class="item-multiplier fs-13">
                                     <span>×</span>
                                     <span>32924</span>
                                 </span>
                   </div><!-- end tag-item -->
                   <div class="tag-item">
-                    <a href="#" class="tag-link tag-link-md">javascript</a>
+                    <a class="tag-link tag-link-md" href="#">javascript</a>
                     <span class="item-multiplier fs-13">
                                     <span>×</span>
                                     <span>32924</span>
                                 </span>
                   </div><!-- end tag-item -->
                   <div class="tag-item">
-                    <a href="#" class="tag-link tag-link-md">c#</a>
+                    <a class="tag-link tag-link-md" href="#">c#</a>
                     <span class="item-multiplier fs-13">
                                     <span>×</span>
                                     <span>32924</span>
                                 </span>
                   </div><!-- end tag-item -->
-                  <div class="collapse" id="showMoreTags">
+                  <div id="showMoreTags" class="collapse">
                     <div class="tag-item">
-                      <a href="#" class="tag-link tag-link-md">java</a>
+                      <a class="tag-link tag-link-md" href="#">java</a>
                       <span class="item-multiplier fs-13">
                                     <span>×</span>
                                     <span>32924</span>
                                 </span>
                     </div><!-- end tag-item -->
                     <div class="tag-item">
-                      <a href="#" class="tag-link tag-link-md">swift</a>
+                      <a class="tag-link tag-link-md" href="#">swift</a>
                       <span class="item-multiplier fs-13">
                                     <span>×</span>
                                     <span>32924</span>
                                 </span>
                     </div><!-- end tag-item -->
                     <div class="tag-item">
-                      <a href="#" class="tag-link tag-link-md">html</a>
+                      <a class="tag-link tag-link-md" href="#">html</a>
                       <span class="item-multiplier fs-13">
                                     <span>×</span>
                                     <span>32924</span>
                                 </span>
                     </div><!-- end tag-item -->
                     <div class="tag-item">
-                      <a href="#" class="tag-link tag-link-md">angular</a>
+                      <a class="tag-link tag-link-md" href="#">angular</a>
                       <span class="item-multiplier fs-13">
                                     <span>×</span>
                                     <span>32924</span>
                                 </span>
                     </div><!-- end tag-item -->
                     <div class="tag-item">
-                      <a href="#" class="tag-link tag-link-md">flutter</a>
+                      <a class="tag-link tag-link-md" href="#">flutter</a>
                       <span class="item-multiplier fs-13">
                                     <span>×</span>
                                     <span>32924</span>
                                 </span>
                     </div><!-- end tag-item -->
                     <div class="tag-item">
-                      <a href="#" class="tag-link tag-link-md">machine-language</a>
+                      <a class="tag-link tag-link-md" href="#">machine-language</a>
                       <span class="item-multiplier fs-13">
                                     <span>×</span>
                                     <span>32924</span>
                                 </span>
                     </div><!-- end tag-item -->
                   </div><!-- end collapse -->
-                  <a class="collapse-btn fs-13" data-toggle="collapse" href="#showMoreTags" role="button" aria-expanded="false" aria-controls="showMoreTags">
+                  <a aria-controls="showMoreTags" aria-expanded="false" class="collapse-btn fs-13" data-toggle="collapse"
+                     href="#showMoreTags" role="button">
                     <span class="collapse-btn-hide">Show more<i class="la la-angle-down ml-1 fs-11"></i></span>
                     <span class="collapse-btn-show">Show less<i class="la la-angle-up ml-1 fs-11"></i></span>
                   </a>
@@ -1209,10 +1290,8 @@
 <script>
 export default {
   name: "UserDetail",
-  data () {
-    return {
-
-    }
+  data() {
+    return {}
   },
   props: {
     user: {

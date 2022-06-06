@@ -18,12 +18,12 @@ api.interceptors.request.use(
   error => Promise.reject(error)
 );
 
-api.interceptors.response.use( response=> {
-  if(response && response.data) {
+api.interceptors.response.use(response => {
+  if (response && response.data) {
     return response.data;
   }
   return response;
-}, error=> {
+}, error => {
   throw error;
 });
 

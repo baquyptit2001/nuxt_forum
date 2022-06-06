@@ -7,7 +7,7 @@ const defaultState = {
   pageSize: 5,
 };
 
-const inBrowser= typeof window !== 'undefined';
+const inBrowser = typeof window !== 'undefined';
 
 const state = (inBrowser && window.__INITIAL_STATE__) ? window.__INITIAL_STATE__.page : defaultState;
 

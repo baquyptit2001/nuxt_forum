@@ -4,15 +4,15 @@
       <div class="row align-items-center">
         <div class="col-lg-2">
           <div class="logo-box">
-            <NuxtLink :to="{ name: 'index' }"><a href="#" class="logo"><img src="~assets/images/logo-black.png"
-                                                                            alt="logo"></a></NuxtLink>
+            <NuxtLink :to="{ name: 'index' }"><a class="logo" href="#"><img alt="logo"
+                                                                            src="~assets/images/logo-black.png"></a></NuxtLink>
             <div class="user-action">
-              <div class="search-menu-toggle icon-element icon-element-xs shadow-sm mr-1" data-toggle="tooltip"
-                   data-placement="top" title="Search">
+              <div class="search-menu-toggle icon-element icon-element-xs shadow-sm mr-1" data-placement="top"
+                   data-toggle="tooltip" title="Search">
                 <i class="la la-search"></i>
               </div>
-              <div class="off-canvas-menu-toggle icon-element icon-element-xs shadow-sm" data-toggle="tooltip"
-                   data-placement="top" title="Main menu">
+              <div class="off-canvas-menu-toggle icon-element icon-element-xs shadow-sm" data-placement="top"
+                   data-toggle="tooltip" title="Main menu">
                 <i class="la la-bars"></i>
               </div>
             </div>
@@ -101,32 +101,37 @@
                 </li>
               </ul><!-- end ul -->
             </nav><!-- end main-menu -->
-            <form method="post" class="mr-4">
+            <form class="mr-4" method="post">
               <div class="form-group mb-0">
-                <input class="form-control form--control form--control-bg-gray" type="text" name="search"
-                       placeholder="Type your search words..." v-model="search" v-on:keyup="typingSearch">
+                <input v-model="search" class="form-control form--control form--control-bg-gray" name="search"
+                       placeholder="Type your search words..." type="text" v-on:keyup="typingSearch">
                 <button class="form-btn" type="button"><i class="la la-search"></i></button>
               </div>
             </form>
             <div class="nav-right-button">
-              <NuxtLink v-if="!access_token" :to="{ name: 'accounts-login' }"><a href="#" class="btn theme-btn"><i
+              <NuxtLink v-if="!access_token" :to="{ name: 'accounts-login' }"><a class="btn theme-btn" href="#"><i
                 class="la la-user mr-1"></i> Account</a></NuxtLink>
-              <div class="dropdown user-dropdown" v-else>
-                <a class="nav-link dropdown-toggle dropdown--toggle pl-2" href="#" id="userMenuDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                  <div class="media media-card media--card shadow-none mb-0 rounded-0 align-items-center bg-transparent">
+              <div v-else class="dropdown user-dropdown">
+                <a id="userMenuDropdown" aria-expanded="false" aria-haspopup="true" class="nav-link dropdown-toggle dropdown--toggle pl-2"
+                   data-toggle="dropdown" href="#" role="button">
+                  <div
+                    class="media media-card media--card shadow-none mb-0 rounded-0 align-items-center bg-transparent">
                     <div class="media-img media-img-xs flex-shrink-0 rounded-full mr-2">
-                      <img :src="user.avatar" alt="avatar" id="profile_avatar" class="rounded-full">
+                      <img id="profile_avatar" :src="user.avatar" alt="avatar" class="rounded-full">
                     </div>
                     <div class="media-body p-0 border-left-0">
                       <h5 class="fs-14">{{ user.username }}</h5>
                     </div>
                   </div>
                 </a>
-                <div class="dropdown-menu dropdown--menu dropdown-menu-right mt-3 keep-open" aria-labelledby="userMenuDropdown">
+                <div aria-labelledby="userMenuDropdown"
+                     class="dropdown-menu dropdown--menu dropdown-menu-right mt-3 keep-open">
                   <h6 class="dropdown-header">Hi, {{ user.username }}</h6>
                   <div class="dropdown-divider border-top-gray mb-0"></div>
                   <div class="dropdown-item-list">
-                    <NuxtLink :to="{name: 'accounts-profile-id', params: {id: user.id}}"><a class="dropdown-item" href="user-profile.html"><i class="la la-user mr-2"></i>Profile</a></NuxtLink>
+                    <NuxtLink :to="{name: 'accounts-profile-id', params: {id: user.id}}"><a class="dropdown-item"
+                                                                                            href="user-profile.html"><i
+                      class="la la-user mr-2"></i>Profile</a></NuxtLink>
                     <a class="dropdown-item" href="notifications.html"><i class="la la-bell mr-2"></i>Notifications</a>
                     <a class="dropdown-item" href="referrals.html"><i class="la la-user-plus mr-2"></i>Referrals</a>
                     <a class="dropdown-item" href="setting.html"><i class="la la-gear mr-2"></i>Settings</a>
@@ -140,8 +145,8 @@
       </div><!-- end row -->
     </div><!-- end container -->
     <div class="off-canvas-menu custom-scrollbar-styled">
-      <div class="off-canvas-menu-close icon-element icon-element-sm shadow-sm" data-toggle="tooltip"
-           data-placement="left" title="Close menu">
+      <div class="off-canvas-menu-close icon-element icon-element-sm shadow-sm" data-placement="left"
+           data-toggle="tooltip" title="Close menu">
         <i class="la la-times"></i>
       </div><!-- end off-canvas-menu-close -->
       <ul class="generic-list-item off-canvas-menu-list pt-90px">
@@ -187,19 +192,19 @@
         </li>
       </ul>
       <div class="off-canvas-btn-box px-4 pt-5 text-center">
-        <a href="#" class="btn theme-btn theme-btn-sm theme-btn-outline" data-toggle="modal"
-           data-target="#loginModal"><i class="la la-sign-in mr-1"></i> Login</a>
+        <a class="btn theme-btn theme-btn-sm theme-btn-outline" data-target="#loginModal" data-toggle="modal"
+           href="#"><i class="la la-sign-in mr-1"></i> Login</a>
         <span class="fs-15 fw-medium d-inline-block mx-2">Or</span>
-        <a href="#" class="btn theme-btn theme-btn-sm" data-toggle="modal" data-target="#signUpModal"><i
+        <a class="btn theme-btn theme-btn-sm" data-target="#signUpModal" data-toggle="modal" href="#"><i
           class="la la-plus mr-1"></i> Sign up</a>
       </div>
     </div><!-- end off-canvas-menu -->
     <div class="mobile-search-form">
       <div class="d-flex align-items-center">
-        <form method="post" class="flex-grow-1 mr-3">
+        <form class="flex-grow-1 mr-3" method="post">
           <div class="form-group mb-0">
-            <input class="form-control form--control pl-40px" type="text" name="search"
-                   placeholder="Type your search words...">
+            <input class="form-control form--control pl-40px" name="search" placeholder="Type your search words..."
+                   type="text">
             <span class="la la-search input-icon"></span>
           </div>
         </form>
@@ -254,7 +259,9 @@ export default {
           if (response.data) {
             this.getUser()
           } else {
-            document.cookie.split(";").forEach(function(c) { document.cookie = c.replace(/^ +/, "").replace(/=.*/, "=;expires=" + new Date().toUTCString() + ";path=/"); });
+            document.cookie.split(";").forEach(function (c) {
+              document.cookie = c.replace(/^ +/, "").replace(/=.*/, "=;expires=" + new Date().toUTCString() + ";path=/");
+            });
           }
         })
         .catch(error => {
@@ -269,7 +276,13 @@ export default {
       this.user.avatar = Cookies.get('user.avatar');
     },
     typingSearch() {
-      console.log(this.search)
+      axios.get(api_domain + 'search/' + this.search)
+        .then(response => {
+          this.$root.$emit('search', response.data)
+        })
+        .catch(error => {
+          console.log(error);
+        });
     },
     logout() {
       axios.get(api_domain + 'accounts/log-out', {

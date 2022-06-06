@@ -28,9 +28,7 @@ export default {
   components: {UserDetail, Hero},
   data() {
     return {
-      user: {
-
-      }
+      user: {}
     }
   },
   created() {
@@ -38,7 +36,7 @@ export default {
   },
   methods: {
     getUser() {
-      axios.get(api_domain + "accounts/info/"+this.$route.params.id , {
+      axios.get(api_domain + "accounts/info/" + this.$route.params.id, {
         headers: {
           Authorization: "Bearer " + Cookies.get("access_token")
         }

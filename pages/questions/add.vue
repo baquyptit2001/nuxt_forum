@@ -4,20 +4,20 @@
       <div class="row">
         <div class="col-lg-8">
           <div class="card card-item">
-            <form method="post" class="card-body" @submit.prevent="add">
+            <form class="card-body" method="post" @submit.prevent="add">
               <div class="input-box">
                 <label class="fs-14 text-black fw-medium mb-0">Question Title</label>
                 <p class="fs-13 pb-3 lh-20">Be specific and imagine you’re asking a question to another person</p>
                 <div class="form-group">
-                  <input class="form-control form--control" type="text" name="text"
-                         placeholder="Why it's not a headshot ??" v-model="question.title">
+                  <input v-model="question.title" class="form-control form--control" name="text"
+                         placeholder="Why it's not a headshot ??" type="text">
                 </div>
               </div><!-- end input-box -->
               <div class="input-box">
                 <label class="fs-14 text-black fw-medium mb-0">Details</label>
                 <p class="fs-13 pb-3 lh-20">Include all the information someone would need to answer your question</p>
                 <div class="form-group">
-                  <textarea class="form-control form--control user-text-editor" rows="10" cols="40"></textarea>
+                  <textarea class="form-control form--control user-text-editor" cols="40" rows="10"></textarea>
                   <div class="d-flex align-items-center pt-2">
                     <div class="mr-3">
                       ``` <code class="badge bg-gray border border-gray text-gray">code</code> ```
@@ -30,7 +30,7 @@
               </div>
               <div class="input-box pt-2">
                 <div class="btn-box">
-                  <button type="submit" class="btn theme-btn">Publish your question</button>
+                  <button class="btn theme-btn" type="submit">Publish your question</button>
                 </div>
               </div>
             </form>
@@ -46,14 +46,14 @@
               <p class="fs-14 lh-22">Avoid asking opinion-based questions.</p>
               <div id="accordion" class="generic-accordion pt-4">
                 <div class="card">
-                  <div class="card-header" id="headingOne">
-                    <button class="btn btn-link fs-15" data-toggle="collapse" data-target="#collapseOne"
-                            aria-expanded="true" aria-controls="collapseOne">
+                  <div id="headingOne" class="card-header">
+                    <button aria-controls="collapseOne" aria-expanded="true" class="btn btn-link fs-15"
+                            data-target="#collapseOne" data-toggle="collapse">
                       <span><span class="text-color pr-2 fs-16">1.</span> Summarize the problem</span>
                       <i class="la la-angle-down collapse-icon"></i>
                     </button>
                   </div>
-                  <div id="collapseOne" class="collapse show" aria-labelledby="headingOne" data-parent="#accordion">
+                  <div id="collapseOne" aria-labelledby="headingOne" class="collapse show" data-parent="#accordion">
                     <div class="card-body">
                       <ul class="generic-list-item generic-list-item-bullet generic-list-item--bullet-2 fs-14">
                         <li class="lh-18 text-black-50">Include details about your goal</li>
@@ -64,14 +64,14 @@
                   </div>
                 </div><!-- end card -->
                 <div class="card">
-                  <div class="card-header" id="headingTwo">
-                    <button class="btn btn-link collapsed fs-15" data-toggle="collapse" data-target="#collapseTwo"
-                            aria-expanded="false" aria-controls="collapseTwo">
+                  <div id="headingTwo" class="card-header">
+                    <button aria-controls="collapseTwo" aria-expanded="false" class="btn btn-link collapsed fs-15"
+                            data-target="#collapseTwo" data-toggle="collapse">
                       <span><span class="text-color pr-2 fs-16">2.</span> Describe what you’ve tried</span>
                       <i class="la la-angle-down collapse-icon"></i>
                     </button>
                   </div>
-                  <div id="collapseTwo" class="collapse" aria-labelledby="headingTwo" data-parent="#accordion">
+                  <div id="collapseTwo" aria-labelledby="headingTwo" class="collapse" data-parent="#accordion">
                     <div class="card-body">
                       <p class="fs-14 lh-22 text-black-50">
                         Show what you’ve tried and tell us what you found (on this site or elsewhere) and why it didn’t
@@ -81,20 +81,20 @@
                   </div>
                 </div><!-- end card -->
                 <div class="card">
-                  <div class="card-header" id="headingThree">
-                    <button class="btn btn-link collapsed fs-15" data-toggle="collapse" data-target="#collapseThree"
-                            aria-expanded="false" aria-controls="collapseThree">
+                  <div id="headingThree" class="card-header">
+                    <button aria-controls="collapseThree" aria-expanded="false" class="btn btn-link collapsed fs-15"
+                            data-target="#collapseThree" data-toggle="collapse">
                       <span><span class="text-color pr-2 fs-16">3.</span> Show some code</span>
                       <i class="la la-angle-down collapse-icon"></i>
                     </button>
                   </div>
-                  <div id="collapseThree" class="collapse" aria-labelledby="headingThree" data-parent="#accordion">
+                  <div id="collapseThree" aria-labelledby="headingThree" class="collapse" data-parent="#accordion">
                     <div class="card-body">
                       <p class="fs-14 lh-22 text-black-50">
                         When appropriate, share the minimum amount of code others need to reproduce your problem (also
                         called a
-                        <a href="#" class="text-color hover-underline">minimum</a>, <a href="#"
-                                                                                       class="text-color hover-underline">reproducible
+                        <a class="text-color hover-underline" href="#">minimum</a>, <a class="text-color hover-underline"
+                                                                                       href="#">reproducible
                         example</a>)
                       </p>
                     </div>
@@ -104,14 +104,14 @@
             </div><!-- end card -->
             <div id="accordion-two" class="generic-accordion">
               <div class="card mb-3">
-                <div class="card-header" id="headingFour">
-                  <button class="btn btn-link collapsed fs-15" data-toggle="collapse" data-target="#collapseFour"
-                          aria-expanded="false" aria-controls="collapseFour">
+                <div id="headingFour" class="card-header">
+                  <button aria-controls="collapseFour" aria-expanded="false" class="btn btn-link collapsed fs-15"
+                          data-target="#collapseFour" data-toggle="collapse">
                     <span>Have a non-programming question?</span>
                     <i class="la la-angle-down collapse-icon"></i>
                   </button>
                 </div>
-                <div id="collapseFour" class="collapse" aria-labelledby="headingFour" data-parent="#accordion-two">
+                <div id="collapseFour" aria-labelledby="headingFour" class="collapse" data-parent="#accordion-two">
                   <div class="card-body">
                     <p class="fs-14 lh-22 text-black-50 pb-2">
                       <a class="text-color hover-underline d-block" href="#" target="_blank">Super user</a>
@@ -135,14 +135,14 @@
                 </div>
               </div><!-- end card -->
               <div class="card">
-                <div class="card-header" id="headingFive">
-                  <button class="btn btn-link collapsed fs-15" data-toggle="collapse" data-target="#collapseFive"
-                          aria-expanded="false" aria-controls="collapseFive">
+                <div id="headingFive" class="card-header">
+                  <button aria-controls="collapseFive" aria-expanded="false" class="btn btn-link collapsed fs-15"
+                          data-target="#collapseFive" data-toggle="collapse">
                     <span>More helpful links</span>
                     <i class="la la-angle-down collapse-icon"></i>
                   </button>
                 </div>
-                <div id="collapseFive" class="collapse" aria-labelledby="headingFive" data-parent="#accordion-two">
+                <div id="collapseFive" aria-labelledby="headingFive" class="collapse" data-parent="#accordion-two">
                   <div class="card-body">
                     <p class="fs-14 lh-22 text-black-50 pb-2">
                       Find more information about <a class="text-color hover-underline" href="#" target="_blank">how to
@@ -179,10 +179,10 @@ export default {
   components: {},
   data() {
     return {
-      question:{
-        title:'',
-        question:'',
-        user_id:'',
+      question: {
+        title: '',
+        question: '',
+        user_id: '',
       },
       access_token: '',
     }

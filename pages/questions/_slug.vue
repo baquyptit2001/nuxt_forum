@@ -19,20 +19,20 @@
               </p>
               <ul class="generic-list-item pt-3">
                 <li><span class="icon-element icon-element-xs shadow-sm d-inline-block mr-2"><svg
-                  xmlns="http://www.w3.org/2000/svg" height="20px" viewBox="0 0 24 24" width="20px" fill="#6c727c"><path
+                  fill="#6c727c" height="20px" viewBox="0 0 24 24" width="20px" xmlns="http://www.w3.org/2000/svg"><path
                   d="M0 0h24v24H0V0z" fill="none"/><path
                   d="M11 18h2v-2h-2v2zm1-16C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm0 18c-4.41 0-8-3.59-8-8s3.59-8 8-8 8 3.59 8 8-3.59 8-8 8zm0-14c-2.21 0-4 1.79-4 4h2c0-1.1.9-2 2-2s2 .9 2 2c0 2-3 1.75-3 5h2c0-2.25 3-2.5 3-5 0-2.21-1.79-4-4-4z"/></svg></span>
                   Anybody can ask a question
                 </li>
                 <li><span class="icon-element icon-element-xs shadow-sm d-inline-block mr-2"><svg
-                  xmlns="http://www.w3.org/2000/svg" height="20px" viewBox="0 0 24 24" width="20px" fill="#6c727c"><path
+                  fill="#6c727c" height="20px" viewBox="0 0 24 24" width="20px" xmlns="http://www.w3.org/2000/svg"><path
                   d="M0 0h24v24H0V0z" fill="none"/><path d="M9 16.2L4.8 12l-1.4 1.4L9 19 21 7l-1.4-1.4L9 16.2z"/></svg></span>
                   Anybody can answer
                 </li>
                 <li><span class="icon-element icon-element-xs shadow-sm d-inline-block mr-2"><svg
-                  xmlns="http://www.w3.org/2000/svg" height="20px" viewBox="0 0 320 512" width="20px"><path
-                  fill="#6c727c"
-                  d="M41 288h238c21.4 0 32.1 25.9 17 41L177 448c-9.4 9.4-24.6 9.4-33.9 0L24 329c-15.1-15.1-4.4-41 17-41zm255-105L177 64c-9.4-9.4-24.6-9.4-33.9 0L24 183c-15.1 15.1-4.4 41 17 41h238c21.4 0 32.1-25.9 17-41z"></path></svg></span>
+                  height="20px" viewBox="0 0 320 512" width="20px" xmlns="http://www.w3.org/2000/svg"><path
+                  d="M41 288h238c21.4 0 32.1 25.9 17 41L177 448c-9.4 9.4-24.6 9.4-33.9 0L24 329c-15.1-15.1-4.4-41 17-41zm255-105L177 64c-9.4-9.4-24.6-9.4-33.9 0L24 183c-15.1 15.1-4.4 41 17 41h238c21.4 0 32.1-25.9 17-41z"
+                  fill="#6c727c"></path></svg></span>
                   The best answers are voted up and rise to the top
                 </li>
               </ul>
@@ -40,7 +40,7 @@
           </div><!-- end col-lg-9 -->
           <div class="col-lg-3">
             <div class="hero-btn-box text-right py-3">
-              <NuxtLink :to="{ name: 'questions-add' }"><a href="ask-question.html" class="btn theme-btn">Ask a
+              <NuxtLink :to="{ name: 'questions-add' }"><a class="btn theme-btn" href="ask-question.html">Ask a
                 Question</a></NuxtLink>
             </div>
           </div>
@@ -63,19 +63,19 @@
                       </div>
                       <div class="pr-3">
                         <span class="pr-1">Active</span>
-                        <a href="#" class="text-black">19 days ago</a>
+                        <a class="text-black" href="#">19 days ago</a>
                       </div>
                       <div class="pr-3">
                         <span class="pr-1">Viewed</span>
-                        <span href="#" class="text-black">{{ question.views }} {{
+                        <span class="text-black" href="#">{{ question.views }} {{
                             pluralize('view', question.views)
                           }}</span>
                       </div>
                     </div>
                     <div class="tags">
-                      <a href="#" class="tag-link">javascript</a>
-                      <a href="#" class="tag-link">jquery</a>
-                      <a href="#" class="tag-link">attribute</a>
+                      <a class="tag-link" href="#">javascript</a>
+                      <a class="tag-link" href="#">jquery</a>
+                      <a class="tag-link" href="#">attribute</a>
                     </div>
                   </div>
                 </div><!-- end media -->
@@ -83,12 +83,12 @@
               <div class="question d-flex">
                 <div class="votes votes-styled w-auto">
                   <div id="vote" class="upvotejs">
-                    <a :class="'upvote ' + question.vote_up" data-toggle="tooltip" data-placement="right"
+                    <a :class="'upvote ' + question.vote_up" data-placement="right" data-toggle="tooltip"
                        title="This question is useful" @click="vote_question(1)"></a>
                     <span class="count">{{ question.vote }}</span>
-                    <a :class="'downvote ' + question.vote_down" data-toggle="tooltip" data-placement="right"
+                    <a :class="'downvote ' + question.vote_down" data-placement="right" data-toggle="tooltip"
                        title="This question is not useful" @click="vote_question(-1)"></a>
-                    <a class="star star-on" data-toggle="tooltip" data-placement="right"
+                    <a class="star star-on" data-placement="right" data-toggle="tooltip"
                        title="Bookmark this question."></a>
                   </div>
                 </div><!-- end votes -->
@@ -99,27 +99,27 @@
                   <div class="question-post-user-action">
                     <div class="post-menu">
                       <div class="btn-group">
-                        <button class="btn dropdown-toggle after-none" type="button" id="shareDropdownMenu"
-                                data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Share
+                        <button id="shareDropdownMenu" aria-expanded="false" aria-haspopup="true"
+                                class="btn dropdown-toggle after-none" data-toggle="dropdown" type="button">Share
                         </button>
-                        <div class="dropdown-menu dropdown--menu dropdown--menu-2 mt-2"
-                             aria-labelledby="shareDropdownMenu">
+                        <div aria-labelledby="shareDropdownMenu"
+                             class="dropdown-menu dropdown--menu dropdown--menu-2 mt-2">
                           <div class="py-3 px-4">
                             <h4 class="fs-15 pb-2">Share a link to this question</h4>
                             <form action="#" class="copy-to-clipboard">
                               <span class="text-success-message">Link Copied!</span>
-                              <input type="text" class="form-control form--control form-control-sm copy-input"
+                              <input class="form-control form--control form-control-sm copy-input" type="text"
                                      value="https://Disilab.com/q/66552850/15319675">
                               <div class="btn-box pt-2 d-flex align-items-center justify-content-between">
-                                <a href="#" class="btn-text copy-btn">Copy link</a>
+                                <a class="btn-text copy-btn" href="#">Copy link</a>
                                 <ul class="social-icons social-icons-sm">
-                                  <li><a href="#" class="bg-8 text-white shadow-none"
+                                  <li><a class="bg-8 text-white shadow-none" href="#"
                                          title="Share link to this question on Facebook"><i class="la la-facebook"></i></a>
                                   </li>
-                                  <li><a href="#" class="bg-9 text-white shadow-none"
+                                  <li><a class="bg-9 text-white shadow-none" href="#"
                                          title="Share link to this question on Twitter"><i
                                     class="la la-twitter"></i></a></li>
-                                  <li><a href="#" class="bg-dark text-white shadow-none"
+                                  <li><a class="bg-dark text-white shadow-none" href="#"
                                          title="Share link to this question on DEV"><i class="lab la-dev"></i></a></li>
                                 </ul>
                               </div>
@@ -127,16 +127,19 @@
                           </div>
                         </div>
                       </div><!-- btn-group -->
-                      <a href="#" class="btn">Edit</a>
+                      <a class="btn" href="#">Edit</a>
                       <button class="btn">Follow</button>
                     </div><!-- end post-menu -->
                     <div class="media media-card user-media owner align-items-center">
-                      <a href="user-profile.html" class="media-img d-block">
+                      <a class="media-img d-block" href="user-profile.html">
                         <img :src="question.avatar" alt="avatar">
                       </a>
                       <div class="media-body d-flex flex-wrap align-items-center justify-content-between">
                         <div>
-                          <h5 class="pb-1"><NuxtLink :to="{name: 'accounts-profile-id', params: {id: question.user_id}}"><a href="user-profile.html">{{ question.username }}</a></NuxtLink></h5>
+                          <h5 class="pb-1">
+                            <NuxtLink :to="{name: 'accounts-profile-id', params: {id: question.user_id}}"><a
+                              href="user-profile.html">{{ question.username }}</a></NuxtLink>
+                          </h5>
                           <div class="stats fs-12 d-flex align-items-center lh-18">
                             <span class="text-black pr-2">224,110</span>
                             <span class="pr-2 d-inline-flex align-items-center"><span class="ball gold"></span>16</span>
@@ -152,8 +155,8 @@
                       </div>
                     </div><!-- end media -->
                     <div class="media media-card user-media align-items-center">
-                      <a href="user-profile.html" class="media-img d-block">
-                        <img src="~assets/images/img4.jpg" alt="avatar">
+                      <a class="media-img d-block" href="user-profile.html">
+                        <img alt="avatar" src="~assets/images/img4.jpg">
                       </a>
                       <div class="media-body d-flex flex-wrap align-items-center justify-content-between">
                         <div>
@@ -166,7 +169,7 @@
                             <span class="pr-2 d-inline-flex align-items-center"><span class="ball"></span>48</span>
                           </div>
                         </div>
-                        <a href="revisions.html" class="meta d-block text-right fs-13 text-color">
+                        <a class="meta d-block text-right fs-13 text-color" href="revisions.html">
                           <span class="d-block lh-18">edited</span>
                           <span class="d-block lh-18 fs-12">6 hours ago</span>
                         </a>
@@ -183,9 +186,9 @@
                           <span class="comment-copy">Where are you trying to get <code
                             class="code">prodId</code>?</span>
                           <span class="comment-separated">-</span>
-                          <a href="user-profile.html" class="comment-user" title="15,467 reputation">Majed Badawi</a>
+                          <a class="comment-user" href="user-profile.html" title="15,467 reputation">Majed Badawi</a>
                           <span class="comment-separated">-</span>
-                          <a href="#" class="comment-date">8 hours ago</a>
+                          <a class="comment-date" href="#">8 hours ago</a>
                         </div>
                       </li>
                       <li>
@@ -195,10 +198,10 @@
                         <div class="comment-body">
                           <span class="comment-copy">In a separate js file.  @MajedBadawi</span>
                           <span class="comment-separated">-</span>
-                          <a href="user-profile.html" class="comment-user owner" title="224,110 reputation">Arden
+                          <a class="comment-user owner" href="user-profile.html" title="224,110 reputation">Arden
                             Smith</a>
                           <span class="comment-separated">-</span>
-                          <a href="#" class="comment-date">8 hours ago</a>
+                          <a class="comment-date" href="#">8 hours ago</a>
                         </div>
                       </li>
                       <li>
@@ -208,10 +211,10 @@
                         <div class="comment-body">
                           <span class="comment-copy">@MajedBadawi I just updated the code to show where I'm trying to get it.</span>
                           <span class="comment-separated">-</span>
-                          <a href="user-profile.html" class="comment-user owner" title="224,110 reputation">Arden
+                          <a class="comment-user owner" href="user-profile.html" title="224,110 reputation">Arden
                             Smith</a>
                           <span class="comment-separated">-</span>
-                          <a href="#" class="comment-date">8 hours ago</a>
+                          <a class="comment-date" href="#">8 hours ago</a>
                         </div>
                       </li>
                       <li>
@@ -222,9 +225,9 @@
                           <span class="comment-copy">Your are missing quotes <code
                             class="code" v-html="'data-productId={{ $product->id }}'"></code> Your markup breaks after that</span>
                           <span class="comment-separated">-</span>
-                          <a href="user-profile.html" class="comment-user" title="6,514 reputation">Kevin Martin</a>
+                          <a class="comment-user" href="user-profile.html" title="6,514 reputation">Kevin Martin</a>
                           <span class="comment-separated">-</span>
-                          <a href="#" class="comment-date">8 hours ago</a>
+                          <a class="comment-date" href="#">8 hours ago</a>
                         </div>
                       </li>
                       <li>
@@ -235,22 +238,22 @@
                           <span class="comment-copy">This doesn't work either: <code
                             class="code">data-productId=" $product->id "</code>. @Kevin Martin</span>
                           <span class="comment-separated">-</span>
-                          <a href="user-profile.html" class="comment-user owner" title="224,110 reputation">Arden
+                          <a class="comment-user owner" href="user-profile.html" title="224,110 reputation">Arden
                             Smith</a>
                           <span class="comment-separated">-</span>
-                          <a href="#" class="comment-date">8 hours ago</a>
+                          <a class="comment-date" href="#">8 hours ago</a>
                         </div>
                       </li>
                     </ul>
                     <div class="comment-form">
                       <div class="comment-link-wrap text-center">
-                        <a class="collapse-btn comment-link" data-toggle="collapse" href="#addCommentCollapse"
-                           role="button" aria-expanded="false" aria-controls="addCommentCollapse"
+                        <a aria-controls="addCommentCollapse" aria-expanded="false" class="collapse-btn comment-link"
+                           data-toggle="collapse" href="#addCommentCollapse" role="button"
                            title="Use comments to ask for more information or suggest improvements. Avoid answering questions in comments.">Add
                           a comment</a>
                       </div>
-                      <div class="collapse border-top border-top-gray mt-2 pt-3" id="addCommentCollapse">
-                        <form method="post" class="row pb-3">
+                      <div id="addCommentCollapse" class="collapse border-top border-top-gray mt-2 pt-3">
+                        <form class="row pb-3" method="post">
                           <div class="col-lg-12">
                             <h4 class="fs-16 pb-2">Leave a Comment</h4>
                             <div class="divider mb-2"><span></span></div>
@@ -260,7 +263,7 @@
                               <label class="fs-13 text-black lh-20">Message</label>
                               <div class="form-group">
                                 <textarea class="form-control form--control form-control-sm fs-13" name="message"
-                                          rows="5" placeholder="Your comment here..."></textarea>
+                                          placeholder="Your comment here..." rows="5"></textarea>
                                 <div class="d-flex flex-wrap align-items-center pt-2">
                                   <div class="badge bg-gray border border-gray mr-3 fw-regular fs-13">[named hyperlinks]
                                     (https://example.com)
@@ -275,12 +278,12 @@
                             <div class="input-box d-flex flex-wrap align-items-center justify-content-between">
                               <div>
                                 <div class="custom-control custom-checkbox fs-13">
-                                  <input type="checkbox" class="custom-control-input" id="getNewComments">
+                                  <input id="getNewComments" class="custom-control-input" type="checkbox">
                                   <label class="custom-control-label custom--control-label" for="getNewComments">Notify
                                     me of new comments vai email.</label>
                                 </div>
                                 <div class="custom-control custom-checkbox fs-13">
-                                  <input type="checkbox" class="custom-control-input" id="getNewPosts">
+                                  <input id="getNewPosts" class="custom-control-input" type="checkbox">
                                   <label class="custom-control-label custom--control-label" for="getNewPosts">Notify me
                                     of new posts vai email.</label>
                                 </div>
@@ -306,20 +309,21 @@
                     <select class="select-container">
                       <option value="active">active</option>
                       <option value="oldest">oldest</option>
-                      <option value="votes" selected="selected">votes</option>
+                      <option selected="selected" value="votes">votes</option>
                     </select>
                   </div>
                 </div><!-- end subheader-actions -->
               </div><!-- end subheader -->
-              <div class="answer-wrap d-flex" v-if="question.best_answer">
+              <div v-if="question.best_answer" class="answer-wrap d-flex">
                 <div class="votes votes-styled w-auto">
                   <div id="vote2" class="upvotejs">
-                    <a :class="'upvote ' + question.best_answer.vote_up" data-toggle="tooltip" data-placement="right"
+                    <a :class="'upvote ' + question.best_answer.vote_up" data-placement="right" data-toggle="tooltip"
                        title="This question is useful" @click="vote_answer(1, question.best_answer.id)"></a>
                     <span class="count">{{ question.best_answer.vote }}</span>
-                    <a :class="'downvote ' + question.best_answer.vote_down" data-toggle="tooltip" data-placement="right"
+                    <a :class="'downvote ' + question.best_answer.vote_down" data-placement="right"
+                       data-toggle="tooltip"
                        title="This question is not useful" @click="vote_answer(-1, question.best_answer.id)"></a>
-                    <a class="star check star-on mark-best" data-toggle="tooltip" data-placement="right"
+                    <a class="star check star-on mark-best" data-placement="right" data-toggle="tooltip"
                        title="The question owner accepted this answer"
                        @click="choose_best_answer(question.best_answer.id)"></a>
                   </div>
@@ -331,27 +335,27 @@
                   <div class="question-post-user-action">
                     <div class="post-menu">
                       <div class="btn-group">
-                        <button class="btn dropdown-toggle after-none" type="button" id="shareDropdownMenuTwo"
-                                data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Share
+                        <button id="shareDropdownMenuTwo" aria-expanded="false" aria-haspopup="true"
+                                class="btn dropdown-toggle after-none" data-toggle="dropdown" type="button">Share
                         </button>
-                        <div class="dropdown-menu dropdown--menu dropdown--menu-2 mt-2"
-                             aria-labelledby="shareDropdownMenuTwo">
+                        <div aria-labelledby="shareDropdownMenuTwo"
+                             class="dropdown-menu dropdown--menu dropdown--menu-2 mt-2">
                           <div class="py-3 px-4">
                             <h4 class="fs-15 pb-2">Share a link to this question</h4>
                             <form action="#" class="copy-to-clipboard">
                               <span class="text-success-message">Link Copied!</span>
-                              <input type="text" class="form-control form--control form-control-sm copy-input"
+                              <input class="form-control form--control form-control-sm copy-input" type="text"
                                      value="https://Disilab.com/q/66552850/15319675">
                               <div class="btn-box pt-2 d-flex align-items-center justify-content-between">
-                                <a href="#" class="btn-text copy-btn">Copy link</a>
+                                <a class="btn-text copy-btn" href="#">Copy link</a>
                                 <ul class="social-icons social-icons-sm">
-                                  <li><a href="#" class="bg-8 text-white shadow-none"
+                                  <li><a class="bg-8 text-white shadow-none" href="#"
                                          title="Share link to this question on Facebook"><i class="la la-facebook"></i></a>
                                   </li>
-                                  <li><a href="#" class="bg-9 text-white shadow-none"
+                                  <li><a class="bg-9 text-white shadow-none" href="#"
                                          title="Share link to this question on Twitter"><i
                                     class="la la-twitter"></i></a></li>
-                                  <li><a href="#" class="bg-dark text-white shadow-none"
+                                  <li><a class="bg-dark text-white shadow-none" href="#"
                                          title="Share link to this question on DEV"><i class="lab la-dev"></i></a></li>
                                 </ul>
                               </div>
@@ -359,16 +363,19 @@
                           </div>
                         </div>
                       </div><!-- btn-group -->
-                      <a href="#" class="btn">Edit</a>
+                      <a class="btn" href="#">Edit</a>
                       <button class="btn">Follow</button>
                     </div><!-- end post-menu -->
                     <div class="media media-card user-media align-items-center">
-                      <a href="user-profile.html" class="media-img d-block">
+                      <a class="media-img d-block" href="user-profile.html">
                         <img :src="question.best_answer.user.avatar" alt="avatar">
                       </a>
                       <div class="media-body d-flex align-items-center justify-content-between">
                         <div>
-                          <h5 class="pb-1"><NuxtLink :to="{name: 'accounts-profile-id', params: {id: question.best_answer.user.id}}"><a href="user-profile.html">{{ question.best_answer.user.name }}</a></NuxtLink></h5>
+                          <h5 class="pb-1">
+                            <NuxtLink :to="{name: 'accounts-profile-id', params: {id: question.best_answer.user.id}}"><a
+                              href="user-profile.html">{{ question.best_answer.user.name }}</a></NuxtLink>
+                          </h5>
                           <div class="stats fs-12 d-flex align-items-center lh-18">
                             <span class="text-black pr-2">15.5k</span>
                             <span class="pr-2 d-inline-flex align-items-center"><span class="ball gold"></span>3</span>
@@ -385,7 +392,7 @@
                     </div><!-- end media -->
                     <div class="media media-card user-media align-items-center">
                       <div class="media-body d-flex align-items-center justify-content-end">
-                        <a href="revisions.html" class="meta d-block text-right fs-13 text-color">
+                        <a class="meta d-block text-right fs-13 text-color" href="revisions.html">
                           <span class="d-block lh-18">edited</span>
                           <span class="d-block lh-18 fs-12">8 hours ago</span>
                         </a>
@@ -393,7 +400,7 @@
                     </div><!-- end media -->
                   </div><!-- end question-post-user-action -->
                   <div class="comments-wrap">
-                    <ul class="comments-list" v-if="question.best_answer.reply">
+                    <ul v-if="question.best_answer.reply" class="comments-list">
                       <li v-for="(reply, index) in question.best_answer.reply">
                         <div class="comment-actions">
                           <span class="comment-score">{{ index + 1 }}</span>
@@ -401,25 +408,26 @@
                         <div class="comment-body">
                           <span class="comment-copy">{{ reply.body }}</span>
                           <span class="comment-separated">-</span>
-                          <NuxtLink :to="{name: 'accounts-profile-id', params:{id: reply.user.id}}"><a href="user-profile.html" class="comment-user owner"
-                             title="224,110 reputation">{{ reply.user.name }}</a></NuxtLink>
+                          <NuxtLink :to="{name: 'accounts-profile-id', params:{id: reply.user.id}}"><a
+                            class="comment-user owner" href="user-profile.html"
+                            title="224,110 reputation">{{ reply.user.name }}</a></NuxtLink>
                           <span class="comment-separated">-</span>
-                          <a href="#" class="comment-date">{{ reply.created_at }}</a>
+                          <a class="comment-date" href="#">{{ reply.created_at }}</a>
                         </div>
                       </li>
                     </ul>
                     <div class="comment-form">
                       <div class="comment-link-wrap text-center">
-                        <a class="collapse-btn comment-link" data-toggle="collapse"
-                           :href="'#addCommentCollapse' + question.best_answer.id"
-                           role="button" aria-expanded="false" aria-controls="addCommentCollapseTwo"
+                        <a :href="'#addCommentCollapse' + question.best_answer.id" aria-controls="addCommentCollapseTwo"
+                           aria-expanded="false"
+                           class="collapse-btn comment-link" data-toggle="collapse" role="button"
                            title="Use comments to ask for more information or suggest improvements. Avoid answering questions in comments.">Add
                           a comment</a>
                       </div>
-                      <div class="collapse border-top border-top-gray mt-2 pt-3"
-                           :id="'addCommentCollapse' + question.best_answer.id">
-                        <form method="post" class="row pb-3" @submit.prevent="replyAnswer(question.best_answer.id)"
-                              v-if="isLogin">
+                      <div :id="'addCommentCollapse' + question.best_answer.id"
+                           class="collapse border-top border-top-gray mt-2 pt-3">
+                        <form v-if="isLogin" class="row pb-3" method="post"
+                              @submit.prevent="replyAnswer(question.best_answer.id)">
                           <div class="col-lg-12">
                             <h4 class="fs-16 pb-2">Leave a Comment</h4>
                             <div class="divider mb-2"><span></span></div>
@@ -428,9 +436,9 @@
                             <div class="input-box">
                               <label class="fs-13 text-black lh-20">Message</label>
                               <div class="form-group">
-                                <textarea class="form-control form--control form-control-sm fs-13" name="message"
-                                          rows="5" placeholder="Your comment here..."
-                                          v-model="answer_reply[question.best_answer.id]"></textarea>
+                                <textarea v-model="answer_reply[question.best_answer.id]" class="form-control form--control form-control-sm fs-13"
+                                          name="message" placeholder="Your comment here..."
+                                          rows="5"></textarea>
                                 <div class="d-flex flex-wrap align-items-center pt-2">
                                   <div class="badge bg-gray border border-gray mr-3 fw-regular fs-13">[named hyperlinks]
                                     (https://example.com)
@@ -445,12 +453,12 @@
                             <div class="input-box d-flex flex-wrap align-items-center justify-content-between">
                               <div>
                                 <div class="custom-control custom-checkbox fs-13">
-                                  <input type="checkbox" class="custom-control-input" id="getNewCommentsTwo">
+                                  <input id="getNewCommentsTwo" class="custom-control-input" type="checkbox">
                                   <label class="custom-control-label custom--control-label" for="getNewCommentsTwo">Notify
                                     me of new comments vai email.</label>
                                 </div>
                                 <div class="custom-control custom-checkbox fs-13">
-                                  <input type="checkbox" class="custom-control-input" id="getNewPostsTwo">
+                                  <input id="getNewPostsTwo" class="custom-control-input" type="checkbox">
                                   <label class="custom-control-label custom--control-label" for="getNewPostsTwo">Notify
                                     me of new posts vai email.</label>
                                 </div>
@@ -461,21 +469,21 @@
                             </div>
                           </div><!-- end col-lg-12 -->
                         </form>
-                        <NuxtLink :to="{name: 'accounts-login'}" v-else><a href="#">Login to reply</a></NuxtLink>
+                        <NuxtLink v-else :to="{name: 'accounts-login'}"><a href="#">Login to reply</a></NuxtLink>
                       </div><!-- end collapse -->
                     </div>
                   </div><!-- end comments-wrap -->
                 </div><!-- end answer-body-wrap -->
               </div><!-- end answer-wrap -->
-              <div class="answer-wrap d-flex" v-for="answer in show_answer">
+              <div v-for="answer in show_answer" class="answer-wrap d-flex">
                 <div class="votes votes-styled w-auto">
                   <div id="vote2" class="upvotejs">
-                    <a :class="'upvote ' + answer.vote_up" data-toggle="tooltip" data-placement="right"
+                    <a :class="'upvote ' + answer.vote_up" data-placement="right" data-toggle="tooltip"
                        title="This question is useful" @click="vote_answer(1, answer.id)"></a>
                     <span class="count">{{ answer.vote }}</span>
-                    <a :class="'downvote ' + answer.vote_down" data-toggle="tooltip" data-placement="right"
+                    <a :class="'downvote ' + answer.vote_down" data-placement="right" data-toggle="tooltip"
                        title="This question is not useful" @click="vote_answer(-1, answer.id)"></a>
-                    <a class="star check mark-best" data-toggle="tooltip" data-placement="right"
+                    <a class="star check mark-best" data-placement="right" data-toggle="tooltip"
                        title="The question owner accepted this answer" @click="choose_best_answer(answer.id)"></a>
                   </div>
                 </div><!-- end votes -->
@@ -486,27 +494,27 @@
                   <div class="question-post-user-action">
                     <div class="post-menu">
                       <div class="btn-group">
-                        <button class="btn dropdown-toggle after-none" type="button" id="shareDropdownMenuTwo"
-                                data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Share
+                        <button id="shareDropdownMenuTwo" aria-expanded="false" aria-haspopup="true"
+                                class="btn dropdown-toggle after-none" data-toggle="dropdown" type="button">Share
                         </button>
-                        <div class="dropdown-menu dropdown--menu dropdown--menu-2 mt-2"
-                             aria-labelledby="shareDropdownMenuTwo">
+                        <div aria-labelledby="shareDropdownMenuTwo"
+                             class="dropdown-menu dropdown--menu dropdown--menu-2 mt-2">
                           <div class="py-3 px-4">
                             <h4 class="fs-15 pb-2">Share a link to this question</h4>
                             <form action="#" class="copy-to-clipboard">
                               <span class="text-success-message">Link Copied!</span>
-                              <input type="text" class="form-control form--control form-control-sm copy-input"
+                              <input class="form-control form--control form-control-sm copy-input" type="text"
                                      value="https://Disilab.com/q/66552850/15319675">
                               <div class="btn-box pt-2 d-flex align-items-center justify-content-between">
-                                <a href="#" class="btn-text copy-btn">Copy link</a>
+                                <a class="btn-text copy-btn" href="#">Copy link</a>
                                 <ul class="social-icons social-icons-sm">
-                                  <li><a href="#" class="bg-8 text-white shadow-none"
+                                  <li><a class="bg-8 text-white shadow-none" href="#"
                                          title="Share link to this question on Facebook"><i class="la la-facebook"></i></a>
                                   </li>
-                                  <li><a href="#" class="bg-9 text-white shadow-none"
+                                  <li><a class="bg-9 text-white shadow-none" href="#"
                                          title="Share link to this question on Twitter"><i
                                     class="la la-twitter"></i></a></li>
-                                  <li><a href="#" class="bg-dark text-white shadow-none"
+                                  <li><a class="bg-dark text-white shadow-none" href="#"
                                          title="Share link to this question on DEV"><i class="lab la-dev"></i></a></li>
                                 </ul>
                               </div>
@@ -514,16 +522,19 @@
                           </div>
                         </div>
                       </div><!-- btn-group -->
-                      <a href="#" class="btn">Edit</a>
+                      <a class="btn" href="#">Edit</a>
                       <button class="btn">Follow</button>
                     </div><!-- end post-menu -->
                     <div class="media media-card user-media align-items-center">
-                      <a href="user-profile.html" class="media-img d-block">
+                      <a class="media-img d-block" href="user-profile.html">
                         <img :src="answer.user.avatar" alt="avatar">
                       </a>
                       <div class="media-body d-flex align-items-center justify-content-between">
                         <div>
-                          <h5 class="pb-1"><NuxtLink :to="{name: 'accounts-profile-id', params: {id: answer.user.id}}"><a href="user-profile.html">{{ answer.user.name }}</a></NuxtLink></h5>
+                          <h5 class="pb-1">
+                            <NuxtLink :to="{name: 'accounts-profile-id', params: {id: answer.user.id}}"><a
+                              href="user-profile.html">{{ answer.user.name }}</a></NuxtLink>
+                          </h5>
                           <div class="stats fs-12 d-flex align-items-center lh-18">
                             <span class="text-black pr-2">15.5k</span>
                             <span class="pr-2 d-inline-flex align-items-center"><span class="ball gold"></span>3</span>
@@ -540,7 +551,7 @@
                     </div><!-- end media -->
                     <div class="media media-card user-media align-items-center">
                       <div class="media-body d-flex align-items-center justify-content-end">
-                        <a href="revisions.html" class="meta d-block text-right fs-13 text-color">
+                        <a class="meta d-block text-right fs-13 text-color" href="revisions.html">
                           <span class="d-block lh-18">edited</span>
                           <span class="d-block lh-18 fs-12">8 hours ago</span>
                         </a>
@@ -548,7 +559,7 @@
                     </div><!-- end media -->
                   </div><!-- end question-post-user-action -->
                   <div class="comments-wrap">
-                    <ul class="comments-list" v-if="answer.reply">
+                    <ul v-if="answer.reply" class="comments-list">
                       <li v-for="(reply, index) in answer.reply">
                         <div class="comment-actions">
                           <span class="comment-score">{{ index + 1 }}</span>
@@ -556,23 +567,24 @@
                         <div class="comment-body">
                           <span class="comment-copy">{{ reply.body }}</span>
                           <span class="comment-separated">-</span>
-                          <NuxtLink :to="{name: 'accounts-profile-id', params: {id: reply.user.id}}"><a href="user-profile.html" class="comment-user owner"
-                             title="224,110 reputation">{{ reply.user.name }}</a></NuxtLink>
+                          <NuxtLink :to="{name: 'accounts-profile-id', params: {id: reply.user.id}}"><a
+                            class="comment-user owner" href="user-profile.html"
+                            title="224,110 reputation">{{ reply.user.name }}</a></NuxtLink>
                           <span class="comment-separated">-</span>
-                          <a href="#" class="comment-date">{{ reply.created_at }}</a>
+                          <a class="comment-date" href="#">{{ reply.created_at }}</a>
                         </div>
                       </li>
                     </ul>
                     <div class="comment-form">
                       <div class="comment-link-wrap text-center">
-                        <a class="collapse-btn comment-link" data-toggle="collapse"
-                           :href="'#addCommentCollapse' + answer.id"
-                           role="button" aria-expanded="false" aria-controls="addCommentCollapseTwo"
+                        <a :href="'#addCommentCollapse' + answer.id" aria-controls="addCommentCollapseTwo"
+                           aria-expanded="false"
+                           class="collapse-btn comment-link" data-toggle="collapse" role="button"
                            title="Use comments to ask for more information or suggest improvements. Avoid answering questions in comments.">Add
                           a comment</a>
                       </div>
-                      <div class="collapse border-top border-top-gray mt-2 pt-3" :id="'addCommentCollapse' + answer.id">
-                        <form method="post" class="row pb-3" @submit.prevent="replyAnswer(answer.id)" v-if="isLogin">
+                      <div :id="'addCommentCollapse' + answer.id" class="collapse border-top border-top-gray mt-2 pt-3">
+                        <form v-if="isLogin" class="row pb-3" method="post" @submit.prevent="replyAnswer(answer.id)">
                           <div class="col-lg-12">
                             <h4 class="fs-16 pb-2">Leave a Comment</h4>
                             <div class="divider mb-2"><span></span></div>
@@ -581,9 +593,9 @@
                             <div class="input-box">
                               <label class="fs-13 text-black lh-20">Message</label>
                               <div class="form-group">
-                                <textarea class="form-control form--control form-control-sm fs-13" name="message"
-                                          rows="5" placeholder="Your comment here..."
-                                          v-model="answer_reply[answer.id]"></textarea>
+                                <textarea v-model="answer_reply[answer.id]" class="form-control form--control form-control-sm fs-13"
+                                          name="message" placeholder="Your comment here..."
+                                          rows="5"></textarea>
                                 <div class="d-flex flex-wrap align-items-center pt-2">
                                   <div class="badge bg-gray border border-gray mr-3 fw-regular fs-13">[named hyperlinks]
                                     (https://example.com)
@@ -598,12 +610,12 @@
                             <div class="input-box d-flex flex-wrap align-items-center justify-content-between">
                               <div>
                                 <div class="custom-control custom-checkbox fs-13">
-                                  <input type="checkbox" class="custom-control-input" id="getNewCommentsTwo">
+                                  <input id="getNewCommentsTwo" class="custom-control-input" type="checkbox">
                                   <label class="custom-control-label custom--control-label" for="getNewCommentsTwo">Notify
                                     me of new comments vai email.</label>
                                 </div>
                                 <div class="custom-control custom-checkbox fs-13">
-                                  <input type="checkbox" class="custom-control-input" id="getNewPostsTwo">
+                                  <input id="getNewPostsTwo" class="custom-control-input" type="checkbox">
                                   <label class="custom-control-label custom--control-label" for="getNewPostsTwo">Notify
                                     me of new posts vai email.</label>
                                 </div>
@@ -614,30 +626,30 @@
                             </div>
                           </div><!-- end col-lg-12 -->
                         </form>
-                        <NuxtLink :to="{name: 'accounts-login'}" v-else><a href="#">Login to reply</a></NuxtLink>
+                        <NuxtLink v-else :to="{name: 'accounts-login'}"><a href="#">Login to reply</a></NuxtLink>
                       </div><!-- end collapse -->
                     </div>
                   </div><!-- end comments-wrap -->
                 </div><!-- end answer-body-wrap -->
               </div><!-- end answer-wrap -->
-              <div class="text-center load-more" v-if="question.answer_count > offset" @click="loadMore">Load more</div>
+              <div v-if="question.answer_count > offset" class="text-center load-more" @click="loadMore">Load more</div>
               <div class="subheader">
                 <div class="subheader-title">
                   <h3 class="fs-16">Your Answer</h3>
                 </div><!-- end subheader-title -->
               </div><!-- end subheader -->
-              <div class="post-form" v-if="isLogin">
-                <form method="post" class="pt-3" @submit.prevent="addAnswer">
+              <div v-if="isLogin" class="post-form">
+                <form class="pt-3" method="post" @submit.prevent="addAnswer">
                   <div class="input-box">
                     <div class="form-group">
                       <textarea class="form-control form--control form-control-sm fs-13 user-text-editor" name="message"
-                                rows="6" placeholder="Enter your answer here"></textarea>
+                                placeholder="Enter your answer here" rows="6"></textarea>
                     </div>
                   </div>
                   <button class="btn theme-btn theme-btn-sm" type="submit">Post Your Answer</button>
                 </form>
               </div>
-              <NuxtLink :to="{name: 'accounts-login'}" v-else><a class="mt-3" type="submit">Login To Answer</a>
+              <NuxtLink v-else :to="{name: 'accounts-login'}"><a class="mt-3" type="submit">Login To Answer</a>
               </NuxtLink>
 
             </div><!-- end question-main-bar -->
@@ -674,8 +686,8 @@
                       </div><!-- end icon-box -->
                     </div><!-- end col-lg-6 -->
                     <div class="col-lg-12 pt-3">
-                      <p class="fs-14">To get answer of question <a href="signup.html"
-                                                                    class="text-color hover-underline">Join<i
+                      <p class="fs-14">To get answer of question <a class="text-color hover-underline"
+                                                                    href="signup.html">Join<i
                         class="la la-arrow-right ml-1"></i></a></p>
                     </div>
                   </div><!-- end row -->
@@ -684,7 +696,7 @@
               <div class="card card-item">
                 <div class="card-body">
                   <div class="d-flex align-items-center pb-3">
-                    <svg class="mr-2" width="18" height="18" viewBox="0 0 18 18" fill="#6c727c">
+                    <svg class="mr-2" fill="#6c727c" height="18" viewBox="0 0 18 18" width="18">
                       <path
                         d="M1 6l8 5 8-5V4L9 9 1 4c0-1.1.9-2 2-2h12c1.09 0 2 .91 2 2v10c0 1.09-.91 2-2 2H3c-1.09 0-2-.91-2-2V6z"></path>
                     </svg>
@@ -713,7 +725,7 @@
                         <small class="meta">
                           <span class="pr-1">2 mins ago</span>
                           <span class="pr-1">. by</span>
-                          <a href="#" class="author">Sudhir Kumbhare</a>
+                          <a class="author" href="#">Sudhir Kumbhare</a>
                         </small>
                       </div>
                     </div><!-- end media -->
@@ -723,7 +735,7 @@
                         <small class="meta">
                           <span class="pr-1">48 mins ago</span>
                           <span class="pr-1">. by</span>
-                          <a href="#" class="author">wimax</a>
+                          <a class="author" href="#">wimax</a>
                         </small>
                       </div>
                     </div><!-- end media -->
@@ -734,7 +746,7 @@
                         <small class="meta">
                           <span class="pr-1">1 hour ago</span>
                           <span class="pr-1">. by</span>
-                          <a href="#" class="author">Antonin gavrel</a>
+                          <a class="author" href="#">Antonin gavrel</a>
                         </small>
                       </div>
                     </div><!-- end media -->
@@ -747,86 +759,86 @@
                   <div class="divider"><span></span></div>
                   <div class="tags pt-4">
                     <div class="tag-item">
-                      <a href="#" class="tag-link tag-link-md">analytics</a>
+                      <a class="tag-link tag-link-md" href="#">analytics</a>
                       <span class="item-multiplier fs-13">
                                     <span>×</span>
                                     <span>32924</span>
                                 </span>
                     </div><!-- end tag-item -->
                     <div class="tag-item">
-                      <a href="#" class="tag-link tag-link-md">computer</a>
+                      <a class="tag-link tag-link-md" href="#">computer</a>
                       <span class="item-multiplier fs-13">
                                     <span>×</span>
                                     <span>32924</span>
                                 </span>
                     </div><!-- end tag-item -->
                     <div class="tag-item">
-                      <a href="#" class="tag-link tag-link-md">python</a>
+                      <a class="tag-link tag-link-md" href="#">python</a>
                       <span class="item-multiplier fs-13">
                                     <span>×</span>
                                     <span>32924</span>
                                 </span>
                     </div><!-- end tag-item -->
                     <div class="tag-item">
-                      <a href="#" class="tag-link tag-link-md">javascript</a>
+                      <a class="tag-link tag-link-md" href="#">javascript</a>
                       <span class="item-multiplier fs-13">
                                     <span>×</span>
                                     <span>32924</span>
                                 </span>
                     </div><!-- end tag-item -->
                     <div class="tag-item">
-                      <a href="#" class="tag-link tag-link-md">c#</a>
+                      <a class="tag-link tag-link-md" href="#">c#</a>
                       <span class="item-multiplier fs-13">
                                     <span>×</span>
                                     <span>32924</span>
                                 </span>
                     </div><!-- end tag-item -->
-                    <div class="collapse" id="showMoreTags">
+                    <div id="showMoreTags" class="collapse">
                       <div class="tag-item">
-                        <a href="#" class="tag-link tag-link-md">java</a>
+                        <a class="tag-link tag-link-md" href="#">java</a>
                         <span class="item-multiplier fs-13">
                                     <span>×</span>
                                     <span>32924</span>
                                 </span>
                       </div><!-- end tag-item -->
                       <div class="tag-item">
-                        <a href="#" class="tag-link tag-link-md">swift</a>
+                        <a class="tag-link tag-link-md" href="#">swift</a>
                         <span class="item-multiplier fs-13">
                                     <span>×</span>
                                     <span>32924</span>
                                 </span>
                       </div><!-- end tag-item -->
                       <div class="tag-item">
-                        <a href="#" class="tag-link tag-link-md">html</a>
+                        <a class="tag-link tag-link-md" href="#">html</a>
                         <span class="item-multiplier fs-13">
                                     <span>×</span>
                                     <span>32924</span>
                                 </span>
                       </div><!-- end tag-item -->
                       <div class="tag-item">
-                        <a href="#" class="tag-link tag-link-md">angular</a>
+                        <a class="tag-link tag-link-md" href="#">angular</a>
                         <span class="item-multiplier fs-13">
                                     <span>×</span>
                                     <span>32924</span>
                                 </span>
                       </div><!-- end tag-item -->
                       <div class="tag-item">
-                        <a href="#" class="tag-link tag-link-md">flutter</a>
+                        <a class="tag-link tag-link-md" href="#">flutter</a>
                         <span class="item-multiplier fs-13">
                                     <span>×</span>
                                     <span>32924</span>
                                 </span>
                       </div><!-- end tag-item -->
                       <div class="tag-item">
-                        <a href="#" class="tag-link tag-link-md">machine-language</a>
+                        <a class="tag-link tag-link-md" href="#">machine-language</a>
                         <span class="item-multiplier fs-13">
                                     <span>×</span>
                                     <span>32924</span>
                                 </span>
                       </div><!-- end tag-item -->
                     </div><!-- end collapse -->
-                    <a class="collapse-btn fs-13" data-toggle="collapse" href="#showMoreTags" role="button"
-                       aria-expanded="false" aria-controls="showMoreTags">
+                    <a aria-controls="showMoreTags" aria-expanded="false" class="collapse-btn fs-13" data-toggle="collapse"
+                       href="#showMoreTags" role="button">
                       <span class="collapse-btn-hide">Show more<i class="la la-angle-down ml-1 fs-11"></i></span>
                       <span class="collapse-btn-show">Show less<i class="la la-angle-up ml-1 fs-11"></i></span>
                     </a>
@@ -905,7 +917,7 @@ export default {
         });
     },
     vote_answer(vote, answer_id) {
-      if (!Cookies.get('access_token')){
+      if (!Cookies.get('access_token')) {
         this.$notify({
           title: 'Bạn chưa đăng nhập',
           message: 'Vui lòng đăng nhập',
@@ -1017,7 +1029,7 @@ export default {
       }
     },
     vote_question(vote) {
-      if (!Cookies.get('access_token')){
+      if (!Cookies.get('access_token')) {
         this.$notify({
           title: 'Bạn chưa đăng nhập',
           message: 'Vui lòng đăng nhập',
@@ -1102,7 +1114,7 @@ export default {
   cursor: pointer !important;
 }
 
-.downvote,.upvote {
+.downvote, .upvote {
   cursor: pointer !important;
 }
 </style>

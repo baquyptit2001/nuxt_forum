@@ -69,7 +69,7 @@ export default {
     extend(config, { isClient }) {
       // Extend only webpack config for client-bundle
       if (isClient) {
-        config.devtool = 'source-map'
+        config.devtool = 'inline-source-map'
       }
     }
   },

@@ -22,25 +22,30 @@
                 <div class="stats fs-14 fw-medium d-flex align-items-center lh-18">
                   <span class="text-black pr-2" title="Reputation">224,110</span>
                   <span class="pr-2 d-inline-flex align-items-center" title="Gold"><span class="ball ml-1 gold"></span>16</span>
-                  <span class="pr-2 d-inline-flex align-items-center" title="Silver"><span class="ball ml-1 silver"></span>93</span>
+                  <span class="pr-2 d-inline-flex align-items-center" title="Silver"><span
+                    class="ball ml-1 silver"></span>93</span>
                   <span class="pr-2 d-inline-flex align-items-center" title="Bronze"><span class="ball ml-1"></span>136</span>
                 </div>
               </div>
             </div><!-- end media -->
           </div><!-- end hero-content -->
         </div><!-- end col-lg-8 -->
-        <div class="col-lg-4" v-if="edit_profile">
+        <div v-if="edit_profile" class="col-lg-4">
           <div class="hero-btn-box text-right py-3">
-            <NuxtLink :to="{name: 'accounts-profile-edit'}"><a href="setting.html" class="btn theme-btn theme-btn-outline theme-btn-outline-gray"><i class="la la-gear mr-1"></i> Edit Profile</a></NuxtLink>
+            <NuxtLink :to="{name: 'accounts-profile-edit'}"><a class="btn theme-btn theme-btn-outline theme-btn-outline-gray"
+                                                               href="setting.html"><i
+              class="la la-gear mr-1"></i> Edit Profile</a></NuxtLink>
           </div>
         </div><!-- end col-lg-4 -->
         <div class="col-lg-12">
-          <ul class="nav nav-tabs generic-tabs generic--tabs generic--tabs-2 mt-4" id="myTab" role="tablist">
+          <ul id="myTab" class="nav nav-tabs generic-tabs generic--tabs generic--tabs-2 mt-4" role="tablist">
             <li class="nav-item">
-              <a class="nav-link active" id="user-profile-tab" data-toggle="tab" href="#user-profile" role="tab" aria-controls="user-profile" aria-selected="true">Profile</a>
+              <a id="user-profile-tab" aria-controls="user-profile" aria-selected="true" class="nav-link active" data-toggle="tab"
+                 href="#user-profile" role="tab">Profile</a>
             </li>
             <li class="nav-item">
-              <a class="nav-link" id="user-activity-tab" data-toggle="tab" href="#user-activity" role="tab" aria-controls="user-activity" aria-selected="false">Activity</a>
+              <a id="user-activity-tab" aria-controls="user-activity" aria-selected="false" class="nav-link" data-toggle="tab"
+                 href="#user-activity" role="tab">Activity</a>
             </li>
           </ul>
         </div><!-- end col-lg-4 -->
@@ -51,8 +56,6 @@
 
 <script>
 import Cookies from "js-cookie";
-import axios from "axios";
-import {api_domain} from "../../constants/constants";
 
 export default {
   name: "Hero",
@@ -70,8 +73,7 @@ export default {
   created() {
     this.edit_profile = (this.$route.params.id === Cookies.get("user.id"));
   },
-  methods:{
-  }
+  methods: {}
 }
 </script>
 

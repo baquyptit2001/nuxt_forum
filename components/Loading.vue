@@ -1,6 +1,8 @@
 <template>
   <div style="display: flex; justify-content: center">
-    <div class="lds-heart"><div></div></div>
+    <div class="lds-heart">
+      <div></div>
+    </div>
   </div>
 </template>
 
@@ -17,6 +19,7 @@ export default {}
   transform: rotate(45deg);
   transform-origin: 40px 40px;
 }
+
 .lds-heart div {
   top: 32px;
   left: 32px;
@@ -26,6 +29,7 @@ export default {}
   background: #ffa1ff;
   animation: lds-heart 1.2s infinite cubic-bezier(0.215, 0.61, 0.355, 1);
 }
+
 .lds-heart div:after,
 .lds-heart div:before {
   content: " ";
@@ -35,14 +39,17 @@ export default {}
   height: 32px;
   background: #ffa1ff;
 }
+
 .lds-heart div:before {
   left: -24px;
   border-radius: 50% 0 0 50%;
 }
+
 .lds-heart div:after {
   top: -24px;
   border-radius: 50% 50% 0 0;
 }
+
 @keyframes lds-heart {
   0% {
     transform: scale(0.95);
