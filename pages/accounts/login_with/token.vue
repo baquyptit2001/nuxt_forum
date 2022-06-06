@@ -89,6 +89,7 @@ export default {
             });
             setCookie.setCookieObject(response.data.user, 'user');
             setCookie.setCookie('access_token', response.data.access_token);
+            this.$root.$emit("editProfile");
             this.$router.push({name: 'index'});
           }
         })

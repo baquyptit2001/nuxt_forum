@@ -113,15 +113,16 @@ import checkCookie from "~/helper/checkCookie";
 
 export default {
   fetch() {
-    if (checkCookie('access_token')) {
-      this.$router.push({name: 'index'});
-      this.$notify({
-        title: 'Already logged in',
-        text: 'You are already logged in',
-        type: 'error'
-      });
-    }
+    // if (checkCookie('access_token')) {
+    //   this.$router.push({name: 'index'});
+    //   this.$notify({
+    //     title: 'Already logged in',
+    //     text: 'You are already logged in',
+    //     type: 'error'
+    //   });
+    // }
   },
+  middleware: ["isLogged"],
   data() {
     return {
       user: {

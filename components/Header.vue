@@ -5,7 +5,8 @@
         <div class="col-lg-2">
           <div class="logo-box">
             <NuxtLink :to="{ name: 'index' }"><a class="logo" href="#"><img alt="logo"
-                                                                            src="~assets/images/logo-black.png"></a></NuxtLink>
+                                                                            src="~assets/images/logo-black.png"></a>
+            </NuxtLink>
             <div class="user-action">
               <div class="search-menu-toggle icon-element icon-element-xs shadow-sm mr-1" data-placement="top"
                    data-toggle="tooltip" title="Search">
@@ -105,6 +106,27 @@
               <div class="form-group mb-0">
                 <input v-model="search" class="form-control form--control form--control-bg-gray" name="search"
                        placeholder="Type your search words..." type="text" v-on:keyup="typingSearch">
+                <div class="search_result">
+                  <ul class="list-unstyled">
+                    <li v-for="question in search_result">
+                      <NuxtLink :to="{name: 'questions-slug', params: {slug: question.slug}}"
+                                @click="clearSearch()"><a href="#">
+                        <div class="media">
+                          <div class="media-left">
+                            <img class="media-object" :src="question.avatar" alt="Generic placeholder image">
+                          </div>
+                          <div class="media-body">
+                            <h4 class="media-heading">{{ question.title.substring(0, 14) }} <span
+                              v-if="question.title.length > 14">...</span></h4>
+                            <p>{{ question.question.substring(0, 56) }} <span
+                              v-if="question.question.length > 56">...</span></p>
+                          </div>
+                        </div>
+                      </a>
+                      </NuxtLink>
+                    </li>
+                  </ul>
+                </div>
                 <button class="form-btn" type="button"><i class="la la-search"></i></button>
               </div>
             </form>
@@ -112,7 +134,8 @@
               <NuxtLink v-if="!access_token" :to="{ name: 'accounts-login' }"><a class="btn theme-btn" href="#"><i
                 class="la la-user mr-1"></i> Account</a></NuxtLink>
               <div v-else class="dropdown user-dropdown">
-                <a id="userMenuDropdown" aria-expanded="false" aria-haspopup="true" class="nav-link dropdown-toggle dropdown--toggle pl-2"
+                <a id="userMenuDropdown" aria-expanded="false" aria-haspopup="true"
+                   class="nav-link dropdown-toggle dropdown--toggle pl-2"
                    data-toggle="dropdown" href="#" role="button">
                   <div
                     class="media media-card media--card shadow-none mb-0 rounded-0 align-items-center bg-transparent">
@@ -234,6 +257,7 @@ export default {
       },
       access_token: null,
       search: null,
+      search_result: [],
     }
   },
   created() {
@@ -247,6 +271,11 @@ export default {
     this.$root.$on("editProfile", () => {
       this.getUser()
     })
+  },
+  watch: {
+    async $route(to, from) {
+      this.clearSearch()
+    },
   },
   methods: {
     isLogged() {
@@ -276,13 +305,22 @@ export default {
       this.user.avatar = Cookies.get('user.avatar');
     },
     typingSearch() {
-      axios.get(api_domain + 'search/' + this.search)
+      axios.get(api_domain + 'questions/find/' + this.search)
         .then(response => {
-          this.$root.$emit('search', response.data)
+          if (response.data.status_code !== 404) {
+            this.search_result = response.data
+          } else {
+            this.search_result = []
+          }
+          console.log(response.data)
         })
         .catch(error => {
           console.log(error);
         });
+    },
+    clearSearch() {
+      this.search = '';
+      this.search_result = [];
     },
     logout() {
       axios.get(api_domain + 'accounts/log-out', {
@@ -313,5 +351,45 @@ export default {
 </script>
 
 <style scoped>
+.search_result {
+  position: absolute;
+  top: 100%;
+  left: 0;
+  width: 100%;
+  background: #fff;
+  border-top: 1px solid #e5e5e5;
+  border-bottom: 1px solid #e5e5e5;
+  z-index: 9999;
+  padding: 10px;
+}
 
+.search_result ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.search_result ul li {
+  padding: 5px 0;
+  border-bottom: 1px solid #e5e5e5;
+}
+
+.search_result ul li:last-child {
+  border-bottom: none;
+}
+
+.search_result ul li a {
+  color: #333;
+  text-decoration: none;
+}
+
+.search_result ul li a:hover {
+  color: #00a8ff;
+}
+
+.media-object {
+  width: 50px;
+  height: 50px;
+  margin-right: 15px;
+}
 </style>
